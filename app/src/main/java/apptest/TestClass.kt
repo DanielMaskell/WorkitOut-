@@ -1,7 +1,9 @@
 package apptest
 
 class TestClass {
-    fun main(args : Array<String>) {
-        println("Hello World!")
+
+    fun main(args: Array<String>) {
+
+        println("Push test")
     }
 }

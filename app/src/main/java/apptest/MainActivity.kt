@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import com.example.fnshn.apptest.R
+import com.example.fnshn.apptest.R.id.fab
 
 import kotlinx.android.synthetic.main.activity_main.*
 
