@@ -7,6 +7,8 @@ import android.view.Menu
 import android.view.MenuItem
 
 import kotlinx.android.synthetic.main.activity_main.*
+import workitout.workitout.R.id.fab
+import workitout.workitout.R.id.toolbar
 
 class MainActivity : AppCompatActivity() {
 
