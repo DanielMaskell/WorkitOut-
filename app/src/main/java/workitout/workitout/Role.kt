@@ -7,5 +7,5 @@ enum class Role(val role: String) {
     EMPLOYER("Employer"),
     TRAINEE("Trainee")
 
-    
+
 }
