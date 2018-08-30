@@ -1,6 +1,6 @@
 package workitout.workitout
 
-class User {
+class Details {
 
     private var userName = null
         get() = field
