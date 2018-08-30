@@ -2,9 +2,47 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="workitout.workitout.MainActivity">
-    <item
-        android:id="@+id/action_settings"
+
+    <button
+        android:id="@+id/Roster"
+        android:icon="@android:color/holo_blue_bright"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="Roster"
         app:showAsAction="never" />
+
+    <button
+        android:id="@+id/Details"
+        android:icon="@android:color/holo_blue_bright"
+        android:orderInCategory="200"
+        android:title="My Details"
+        app:showAsAction="never" />
+
+    <button
+        android:id="@+id/Notifications"
+        android:icon="@android:color/holo_blue_bright"
+        android:orderInCategory="300"
+        android:title="Notifications"
+        app:showAsAction="never" />
+
+    <button
+        android:id="@+id/AnnualLeave"
+        android:icon="@android:color/holo_blue_bright"
+        android:orderInCategory="400"
+        android:title="Annual Leave"
+        app:showAsAction="never" />
+
+    <button
+        android:id="@+id/SickLeave"
+        android:icon="@android:color/holo_blue_bright"
+        android:orderInCategory="500"
+        android:title="Sick Leave"
+        app:showAsAction="never" />
+
+    <button
+        android:id="@+id/Calendar"
+        android:icon="@android:color/holo_blue_bright"
+        android:orderInCategory="600"
+        android:title="Calendar"
+        app:showAsAction="never" />
+
 </menu>
