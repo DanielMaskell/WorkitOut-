@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relativeLayout"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true">
+
+    <Button
+        android:id="@+id/roster"
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:clickable="true"
+        android:text="Roster"
+        android:visibility="visible"/>
+
+    <Button
+        android:id="@+id/details"
+        android:layout_width="191dp"
+        android:layout_height="141dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/roster"
+        android:clickable="true"
+        android:text="Details"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/schedule"
+        android:layout_width="192dp"
+        android:layout_height="138dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/details"
+        android:clickable="true"
+        android:text="Schedule"
+        android:visibility="visible"/>
+
+    <Button
+        android:id="@+id/notifications"
+        android:layout_width="185dp"
+        android:layout_height="141dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/details"
+        android:clickable="true"
+        android:text="Notifications"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/annualLeave"
+        android:layout_width="194dp"
+        android:layout_height="136dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/schedule"
+        android:clickable="true"
+        android:text="Annual Leave"
+        android:visibility="visible"/>
+
+    <Button
+        android:id="@+id/sickLeave"
+        android:layout_width="187dp"
+        android:layout_height="140dp"
+        android:layout_alignStart="@+id/notifications"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/roster"
+        android:clickable="true"
+        android:text="Sick Leave"
+        android:visibility="visible"/>
+
+    <Button
+        android:id="@+id/calendar"
+        android:layout_width="184dp"
+        android:layout_height="134dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/schedule"
+        android:clickable="true"
+        android:text="Calendar"
+        android:visibility="visible"/>
+
+</RelativeLayout>
