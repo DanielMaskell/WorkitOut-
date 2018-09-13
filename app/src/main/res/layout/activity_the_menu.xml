@@ -8,77 +8,66 @@
     android:layout_alignParentLeft="true"
     android:layout_alignParentStart="true">
 
+
     <Button
         android:id="@+id/roster"
         android:layout_width="match_parent"
-        android:layout_height="83dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_height="80dp"
         android:clickable="true"
-        android:text="Roster"
-        android:visibility="visible"/>
+        android:text="ROSTER"/>
 
     <Button
         android:id="@+id/details"
-        android:layout_width="191dp"
-        android:layout_height="141dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="1dp"
-        android:layout_alignParentStart="@id/roster"
-        android:layout_below="@id/roster"
-        android:clickable="true"
-        android:text="Details"
-        android:visibility="visible" />
+        android:layout_width="190dp"
+        android:layout_height="140dp"
+        android:text="DETAILS"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="82dp"
+        android:clickable="true"/>
 
     <Button
         android:id="@+id/schedule"
-        android:layout_width="191dp"
-        android:layout_height="141dp"
-        android:layout_alignParentLeft="@id/details"
-        android:layout_below="@id/details"
-        android:clickable="true"
-        android:text="Schedule"
-        android:visibility="visible"/>
-
-    <Button
-        android:id="@+id/notifications"
-        android:layout_width="191dp"
-        android:layout_height="141dp"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@id/sickLeave"
-        android:clickable="true"
-        android:text="Notifications"
-        android:visibility="visible" />
+        android:layout_width="190dp"
+        android:layout_height="140dp"
+        android:text="SCHEDULE"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="82dp"
+        android:clickable="true"/>
 
     <Button
         android:id="@+id/annualLeave"
-        android:layout_width="191dp"
-        android:layout_height="141dp"
-        android:layout_alignParentLeft="@id/schedule"
-        android:layout_below="@id/schedule"
-        android:clickable="true"
-        android:text="Annual Leave"
-        android:visibility="visible"/>
+        android:layout_width="190dp"
+        android:layout_height="140dp"
+        android:text="ANNUAL LEAVE"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="224dp"
+        android:clickable="true"/>
 
     <Button
         android:id="@+id/sickLeave"
-        android:layout_width="191dp"
-        android:layout_height="141dp"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@id/roster"
-        android:clickable="true"
-        android:text="Sick Leave"
-        android:visibility="visible"/>
+        android:layout_width="190dp"
+        android:layout_height="140dp"
+        android:text="SICK LEAVE"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="224dp"
+        android:clickable="true"/>
 
     <Button
-        android:id="@+id/calendar"
-        android:layout_width="191dp"
-        android:layout_height="141dp"
-        android:layout_alignParentEnd="true"
+        android:id="@+id/notifications"
+        android:layout_width="190dp"
+        android:layout_height="140dp"
+        android:text="NOTIFICATIONS"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="365dp"
+        android:clickable="true"/>
+
+    <Button
+        android:id="@+id/Calendar"
+        android:layout_width="190dp"
+        android:layout_height="140dp"
+        android:text="CALENDAR"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/notifications"
-        android:clickable="true"
-        android:text="Calendar"
-        android:visibility="visible"/>
+        android:layout_marginTop="365dp"
+        android:clickable="true"/>
 
 </RelativeLayout>

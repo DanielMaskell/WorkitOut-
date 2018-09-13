@@ -23,8 +23,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         menu.setOnClickListener{
-            val intent = Intent(this@MainActivity, theMenu::class.java)
-            startActivity(intent)
+            val menuActivity = Intent(this@MainActivity, theMenu::class.java)
+            startActivity (menuActivity)
         }
     }
 

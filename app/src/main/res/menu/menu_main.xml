@@ -38,11 +38,11 @@
         android:title="Sick Leave"
         app:showAsAction="never" />
 
-    <button
-        android:id="@+id/Calendar"
-        android:icon="@android:color/holo_blue_bright"
-        android:orderInCategory="600"
-        android:title="Calendar"
-        app:showAsAction="never" />
+    <!--<button-->
+        <!--android:id="@+id/Calendar"-->
+        <!--android:icon="@android:color/holo_blue_bright"-->
+        <!--android:orderInCategory="600"-->
+        <!--android:title="Calendar"-->
+        <!--app:showAsAction="never" />-->
 
 </menu>
