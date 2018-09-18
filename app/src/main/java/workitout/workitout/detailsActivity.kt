@@ -12,10 +12,7 @@ class detailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
+
 
         details.setOnClickListener{
             val detailsActivity = Intent(this@detailsActivity, detailsActivity::class.java)
