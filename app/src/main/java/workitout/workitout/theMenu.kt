@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_the_menu.*
 
 class theMenu : AppCompatActivity() {
 
@@ -12,9 +13,9 @@ class theMenu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_the_menu)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+        details.setOnClickListener{
+            val detailsActivity = Intent(this@theMenu, detailsActivity::class.java)
+            startActivity (detailsActivity)
         }
 
     }
