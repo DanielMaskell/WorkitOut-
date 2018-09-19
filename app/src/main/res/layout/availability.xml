@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+
+    <TextView
+        android:id="@+id/monday"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="@string/monday"
+        android:layout_alignParentLeft="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/monday"
+        android:text="@string/togglebutton1"/>
+
+    <TextView
+        android:id="@+id/tuesday"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="@string/tuesday"
+        android:layout_below="@id/monday"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/tuesday"
+        android:layout_below="@id/toggleButton1"
+        android:text="@string/togglebutton2"/>
+
+    <TextView
+        android:id="@+id/wednesday"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="@string/wednesday"
+        android:layout_below="@id/tuesday"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/wednesday"
+        android:layout_below="@id/toggleButton2"
+        android:text="@string/togglebutton3"/>
+
+    <TextView
+        android:id="@+id/thursday"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="@string/thursday"
+        android:layout_below="@id/wednesday"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/thursday"
+        android:layout_below="@id/toggleButton3"
+        android:text="@string/togglebutton4"/>
+
+    <TextView
+        android:id="@+id/friday"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="@string/friday"
+        android:layout_below="@id/thursday"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton5"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/friday"
+        android:layout_below="@id/toggleButton4"
+        android:text="@string/togglebutton5"/>
+
+    <TextView
+        android:id="@+id/saturday"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="@string/saturday"
+        android:layout_below="@id/friday"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton6"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/saturday"
+        android:layout_below="@id/toggleButton5"
+        android:text="@string/togglebutton6"/>
+
+    <TextView
+        android:id="@+id/sunday"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="@string/sunday"
+        android:layout_below="@id/saturday"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton7"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_toRightOf="@id/sunday"
+        android:layout_below="@id/toggleButton6"
+        android:text="@string/togglebutton7"/>
+
+</RelativeLayout>
