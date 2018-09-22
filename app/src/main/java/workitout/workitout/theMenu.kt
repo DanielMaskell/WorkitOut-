@@ -13,9 +13,9 @@ class theMenu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_the_menu)
 
-        details.setOnClickListener{
+        details.setOnClickListener {
             val detailsActivity = Intent(this@theMenu, detailsActivity::class.java)
-            startActivity (detailsActivity)
+            startActivity(detailsActivity)
         }
 
     }

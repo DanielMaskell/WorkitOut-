@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:clickable="true"
-        android:text="ROSTER"/>
+        android:text="ROSTER" />
 
     <Button
         android:id="@+id/details"
@@ -23,7 +22,7 @@
         android:text="DETAILS"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="82dp"
-        android:clickable="true"/>
+        android:clickable="true" />
 
     <Button
         android:id="@+id/schedule"
@@ -32,7 +31,7 @@
         android:text="SCHEDULE"
         android:layout_alignParentRight="true"
         android:layout_marginTop="82dp"
-        android:clickable="true"/>
+        android:clickable="true" />
 
     <Button
         android:id="@+id/annualLeave"
@@ -50,7 +49,7 @@
         android:text="SICK LEAVE"
         android:layout_alignParentRight="true"
         android:layout_marginTop="224dp"
-        android:clickable="true"/>
+        android:clickable="true" />
 
     <Button
         android:id="@+id/notifications"
@@ -59,7 +58,7 @@
         android:text="NOTIFICATIONS"
         android:layout_alignParentLeft="true"
         android:layout_marginTop="365dp"
-        android:clickable="true"/>
+        android:clickable="true" />
 
     <Button
         android:id="@+id/Calendar"
@@ -68,6 +67,6 @@
         android:text="CALENDAR"
         android:layout_alignParentRight="true"
         android:layout_marginTop="365dp"
-        android:clickable="true"/>
+        android:clickable="true" />
 
 </RelativeLayout>

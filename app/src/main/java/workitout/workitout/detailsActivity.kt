@@ -12,11 +12,9 @@ class detailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
-
-        details.setOnClickListener{
+        details.setOnClickListener {
             val detailsActivity = Intent(this@detailsActivity, detailsActivity::class.java)
-            startActivity (detailsActivity)
+            startActivity(detailsActivity)
         }
     }
 }
