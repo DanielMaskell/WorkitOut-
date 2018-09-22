@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
 
         menu.setOnClickListener {
-            val menuActivity = Intent(this@MainActivity, theMenu::class.java)
+            val menuActivity = Intent(this@MainActivity, MenuActivity::class.java)
             startActivity(menuActivity)
         }
     }
