@@ -58,7 +58,7 @@ class DatabaseHandler : SQLiteOpenHelper {
         onCreate(p0)
     }
 
-    fun AddContact(values: ContentValues): String {
+    fun Add(values: ContentValues): String {
         var msg: String = "error";
         val id = sqlObj!!.insert(tableName, "", values)
         if (id > 0) {
@@ -67,7 +67,7 @@ class DatabaseHandler : SQLiteOpenHelper {
         return msg
     }
 
-    fun FetchContacts(keyword: String): ArrayList<UserDetails> {
+    fun Fetch(keyword: String): ArrayList<UserDetails> {
         var arraylist = ArrayList<UserDetails>()
         val sqb = SQLiteQueryBuilder()
         sqb.tables = tableName
@@ -104,7 +104,7 @@ class DatabaseHandler : SQLiteOpenHelper {
         return arraylist
     }
 
-    fun UpdateContact(values: ContentValues, id: Int): String {
+    fun Update(values: ContentValues, id: Int): String {
         var selectionArs = arrayOf(id.toString())
         val i = sqlObj!!.update(tableName, values, "id=?", selectionArs)
         if (i > 0) {
@@ -114,7 +114,7 @@ class DatabaseHandler : SQLiteOpenHelper {
         }
     }
 
-    fun RemoveContact(id: Int): String {
+    fun Remove(id: Int): String {
         var selectionArs = arrayOf(id.toString())
         val i = sqlObj!!.delete(tableName, "id=?", selectionArs)
         if (i > 0) {
