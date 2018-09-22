@@ -1,8 +1,8 @@
 package workitout.workitout
 
-class   UserDetails(employeeID: String?, fName: String?, lName: String?, password: String?,
-                    mondayAvail: String?, tuesdayAvail: String?, wednesdayAvail: String?, thursdayAvail: String?,
-                    fridayAvail: String?, saturdayAvail: String?, sundayAvail: String?, homePhone: String?,
-                    mobilePhone: String?, homeAddress: String?, emailAddress: String?, role: Role?) {
+class   UserDetails(employeeID: String? = null, fName: String? = null, lName: String? = null, password: String? = null,
+                    mondayAvail: String? = null, tuesdayAvail: String? = null, wednesdayAvail: String? = null, thursdayAvail: String? = null,
+                    fridayAvail: String? = null, saturdayAvail: String? = null, sundayAvail: String? = null, homePhone: String? = null,
+                    mobilePhone: String? = null, homeAddress: String? = null, emailAddress: String? = null, role: Role? = null) {
 
 }
