@@ -15,6 +15,11 @@ class MenuActivity : AppCompatActivity() {
             val detailsActivity = Intent(this@MenuActivity, DetailsActivity::class.java)
             startActivity(detailsActivity)
         }
+        schedule.setOnClickListener {
+            val intent = Intent(this, AvailabilityActivity::class.java)
+            // start your next activity
+            startActivity(intent)
+        }
 
     }
 }
