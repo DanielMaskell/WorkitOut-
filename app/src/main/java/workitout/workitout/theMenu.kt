@@ -18,5 +18,9 @@ class theMenu : AppCompatActivity() {
             startActivity (detailsActivity)
         }
 
+        Calendar.setOnClickListener{
+            val calendarActivity = Intent(this@theMenu, calendarActivity::class.java)
+            startActivity(calendarActivity)
+        }
     }
 }
