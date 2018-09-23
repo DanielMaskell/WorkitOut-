@@ -15,4 +15,8 @@
     <string name="togglebutton5">ToggleButton5</string>
     <string name="togglebutton6">ToggleButton6</string>
     <string name="togglebutton7">ToggleButton7</string>
+    //Strings for LoginActivity//
+    <string name="buttonLogin">Login</string>
+    <string name="textViewPassword">PASSWORD</string>
+    <string name="textViewID">USER ID</string>
 </resources>
