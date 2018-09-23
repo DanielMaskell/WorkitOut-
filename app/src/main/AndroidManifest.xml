@@ -26,7 +26,7 @@
         </activity>
         <activity android:name=".MenuActivity"></activity>
         <activity android:name=".AvailabilityActivity"></activity>
-        <activity android:name=".calendarActivity"
+        <activity android:name=".CalendarActivity"
             android:theme="@style/AppTheme.NoActionBar"
             ></activity>
         <activity android:name=".DetailsActivity"></activity>
