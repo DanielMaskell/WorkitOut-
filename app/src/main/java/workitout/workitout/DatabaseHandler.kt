@@ -123,4 +123,58 @@ class DatabaseHandler : SQLiteOpenHelper {
             return "error";
         }
     }
+
+    /**
+     * Check user with a certain ID exists or not
+     * @param ID
+     * @return True or False
+     */
+    fun checkUser (id: String): Boolean {
+        val columns = arrayOf(employeeID)
+        val db = this.readableDatabase
+
+        val selection = "$employeeID = ?"
+
+        val selectionArgs = arrayOf (id)
+
+        val cursor = db.query(tableName, columns, selection, selectionArgs, null, null, null)
+
+        val cursorCount = cursor.count
+        cursor.close()
+        db.close()
+
+        if (cursorCount > 0) {
+            return true
+        }
+
+        return false
+    }
+
+    /**
+     * method checking user exist or not
+     *
+     * @param ID
+     * @param password
+     * @return true or false
+     */
+    fun checkUser(id: String, psw: String): Boolean {
+        val columns = arrayOf(employeeID)
+        val db = this.readableDatabase
+
+        val selection = "$employeeID = ? AND $password = ?"
+
+        val selectionArgs = arrayOf (id, psw)
+
+        val cursor = db.query(tableName, columns, selection, selectionArgs, null, null, null)
+
+        val cursorCount = cursor.count
+        cursor.close()
+        db.close()
+
+        if (cursorCount > 0) {
+            return true
+        }
+
+        return false
+    }
 }
