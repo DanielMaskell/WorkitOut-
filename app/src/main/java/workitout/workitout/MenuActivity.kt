@@ -12,9 +12,11 @@ class MenuActivity : AppCompatActivity() {
         setContentView(R.layout.activity_the_menu)
 
         details.setOnClickListener {
-            val detailsActivity = Intent(this@MenuActivity, DetailsActivity::class.java)
-            startActivity(detailsActivity)
+            val intent = Intent(this, DetailsActivity::class.java)
+            startActivity(intent)
         }
+
+
         schedule.setOnClickListener {
             val intent = Intent(this, AvailabilityActivity::class.java)
             // start your next activity
