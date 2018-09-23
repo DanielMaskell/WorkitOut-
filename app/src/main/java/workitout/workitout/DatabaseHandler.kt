@@ -37,8 +37,8 @@ class DatabaseHandler : SQLiteOpenHelper {
     var sqlObj: SQLiteDatabase
 
     constructor(context: Context) : super(context, DBName, null, DBVersion) {
-        this.context = context;
-        sqlObj = this.writableDatabase;
+        this.context = context
+        sqlObj = this.writableDatabase
     }
 
     override fun onCreate(p0: SQLiteDatabase?) {
@@ -50,7 +50,7 @@ class DatabaseHandler : SQLiteOpenHelper {
                 " TEXT," + thursdayAvail + " TEXT, " + fridayAvail + " TEXT, " + saturdayAvail +
                 " TEXT," + sundayAvail + " TEXT, " + homePhone + " TEXT, " + mobilePhone +
                 " TEXT," + homeAddress + " TEXT, " + emailAddress + " TEXT, " + role + " TEXT );"
-        p0!!.execSQL(createSQL);
+        p0!!.execSQL(createSQL)
     }
 
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
@@ -108,9 +108,9 @@ class DatabaseHandler : SQLiteOpenHelper {
         var selectionArs = arrayOf(id.toString())
         val i = sqlObj!!.update(tableName, values, "id=?", selectionArs)
         if (i > 0) {
-            return "ok";
+            return "ok"
         } else {
-            return "error";
+            return "error"
         }
     }
 
@@ -118,9 +118,9 @@ class DatabaseHandler : SQLiteOpenHelper {
         var selectionArs = arrayOf(id.toString())
         val i = sqlObj!!.delete(tableName, "id=?", selectionArs)
         if (i > 0) {
-            return "ok";
+            return "ok"
         } else {
-            return "error";
+            return "error"
         }
     }
 
