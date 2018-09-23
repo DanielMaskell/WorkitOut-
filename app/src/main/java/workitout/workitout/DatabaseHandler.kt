@@ -129,13 +129,13 @@ class DatabaseHandler : SQLiteOpenHelper {
      * @param ID
      * @return True or False
      */
-    fun checkUser (id: String): Boolean {
+    fun checkUser(id: String): Boolean {
         val columns = arrayOf(employeeID)
         val db = this.readableDatabase
 
         val selection = "$employeeID = ?"
 
-        val selectionArgs = arrayOf (id)
+        val selectionArgs = arrayOf(id)
 
         val cursor = db.query(tableName, columns, selection, selectionArgs, null, null, null)
 
@@ -163,7 +163,7 @@ class DatabaseHandler : SQLiteOpenHelper {
 
         val selection = "$employeeID = ? AND $password = ?"
 
-        val selectionArgs = arrayOf (id, psw)
+        val selectionArgs = arrayOf(id, psw)
 
         val cursor = db.query(tableName, columns, selection, selectionArgs, null, null, null)
 
