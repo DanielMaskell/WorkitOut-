@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="135dp"
+        android:layout_height="46dp"
+        android:text="MyThursdayWork"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="34dp" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="129dp"
+        android:layout_height="46dp"
+        android:text="Back To Menu"
+        tools:layout_editor_absoluteX="208dp"
+        tools:layout_editor_absoluteY="34dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="312dp"
+        android:layout_height="318dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="32dp"
+        tools:layout_editor_absoluteY="121dp" />
+</android.support.constraint.ConstraintLayout>
