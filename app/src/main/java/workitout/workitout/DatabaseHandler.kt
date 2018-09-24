@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.content.Context
 import android.content.ContentValues
 import android.database.sqlite.SQLiteQueryBuilder
+import android.support.annotation.IntegerRes
 import java.util.ArrayList
 
 class DatabaseHandler : SQLiteOpenHelper {
@@ -44,7 +45,7 @@ class DatabaseHandler : SQLiteOpenHelper {
     override fun onCreate(p0: SQLiteDatabase?) {
 //SQL for creating table
         var createSQL: String = "CREATE TABLE IF NOT EXISTS " + tableName + " " +
-                "(" + employeeID + " INTEGER PRIMARY KEY," +
+                "(" + employeeID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 fName + " TEXT, " + lName + " TEXT, " + password +
                 " TEXT," + mondayAvail + " TEXT, " + tuesdayAvail + " TEXT, " + wednesdayAvail +
                 " TEXT," + thursdayAvail + " TEXT, " + fridayAvail + " TEXT, " + saturdayAvail +
@@ -126,16 +127,16 @@ class DatabaseHandler : SQLiteOpenHelper {
 
     /**
      * Check user with a certain ID exists or not
-     * @param ID
+     * @param firstName
      * @return True or False
      */
-    fun checkUser(id: String): Boolean {
-        val columns = arrayOf(employeeID)
+    fun checkUser(firstName: String): Boolean {
+        val columns = arrayOf(fName)
         val db = this.readableDatabase
 
-        val selection = "$employeeID = ?"
+        val selection = "$fName = ?"
 
-        val selectionArgs = arrayOf(id)
+        val selectionArgs = arrayOf(firstName)
 
         val cursor = db.query(tableName, columns, selection, selectionArgs, null, null, null)
 
@@ -153,17 +154,17 @@ class DatabaseHandler : SQLiteOpenHelper {
     /**
      * method checking user exist or not
      *
-     * @param ID
+     * @param firstName
      * @param password
      * @return true or false
      */
-    fun checkUser(id: String, psw: String): Boolean {
-        val columns = arrayOf(employeeID)
+    fun checkUser(firstName: String, psw: String): Boolean {
+        val columns = arrayOf(fName)
         val db = this.readableDatabase
 
-        val selection = "$employeeID = ? AND $password = ?"
+        val selection = "$fName = ? AND $password = ?"
 
-        val selectionArgs = arrayOf(id, psw)
+        val selectionArgs = arrayOf(firstName, psw)
 
         val cursor = db.query(tableName, columns, selection, selectionArgs, null, null, null)
 
@@ -176,5 +177,33 @@ class DatabaseHandler : SQLiteOpenHelper {
         }
 
         return false
+    }
+
+    /**
+     * Demo method
+     * Add user
+     * @param userID, userfName, userlName, password
+     */
+    fun addUser(firstName: String, lastName: String, psw: String){
+        val db = this.writableDatabase
+
+        val values = ContentValues()
+        values.put("$fName", firstName)
+        values.put("$lName", lastName)
+        values.put("$password",psw)
+        values.put("$mondayAvail", "")
+        values.put("$tuesdayAvail", "")
+        values.put("$wednesdayAvail", "")
+        values.put("$thursdayAvail", "")
+        values.put("$fridayAvail", "")
+        values.put("$saturdayAvail", "")
+        values.put("$sundayAvail", "")
+        values.put("$homePhone", "")
+        values.put("$mobilePhone", "")
+        values.put("$homeAddress", "")
+        values.put("$emailAddress", "")
+
+        db.insert(tableName, null, values)
+        db.close()
     }
 }
