@@ -32,14 +32,14 @@ class EmployeeDetails(employeeID: String? = null,
     val mobilePhone = mobilePhone
     val homeAddress = homeAddress
     val emailAddress = emailAddress
-    val role = role
+    //val role = role
 
     override fun toString(): String {
         return "EmployeeDetails(employeeID=$employeeID, fName=$fName, lName=$lName, password=$password, " +
                 "mondayAvail=$mondayAvail, tuesdayAvail=$tuesdayAvail, wednesdayAvail=$wednesdayAvail, " +
                 "thursdayAvail=$thursdayAvail, fridayAvail=$fridayAvail, saturdayAvail=$saturdayAvail, " +
                 "sundayAvail=$sundayAvail, homePhone=$homePhone, mobilePhone=$mobilePhone, homeAddress=$homeAddress, " +
-                "emailAddress=$emailAddress, role=$role)"
+                "emailAddress=$emailAddress"
     }
 
 

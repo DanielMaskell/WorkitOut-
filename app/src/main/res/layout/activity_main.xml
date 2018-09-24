@@ -24,27 +24,30 @@
     <include layout="@layout/content_main" />
 
     <Button
+        android:id="@+id/add_employee_btn"
+        android:layout_width="500dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:clickable="true"
+        android:gravity="center"
+        android:padding="50dp"
+        android:text="Add New Employee"
+        android:textSize="300sp"
+        android:textStyle="bold" />
+
+    <Button
         android:id="@+id/menu"
         android:layout_width="106dp"
         android:layout_height="100dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="0dp"
         android:clickable="true"
         android:text="Menu"
         app:layout_anchor="@+id/menu"
         app:layout_anchorGravity="bottom|center" />
 
-    <Button
-        android:id="@+id/add_employee_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="5dp"
-        android:text="Add New Employee"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
     <ListView
         android:id="@+id/employee_list"
+        android:layout_marginTop="300dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:dividerHeight="1px"/>
