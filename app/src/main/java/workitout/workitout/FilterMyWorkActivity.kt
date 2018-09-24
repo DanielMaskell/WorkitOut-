@@ -12,7 +12,6 @@ class FilterMyWorkActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.filter_my_work)
 
-
     }
 }
 
