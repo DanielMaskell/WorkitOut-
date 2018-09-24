@@ -49,7 +49,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         dbHandler = DatabaseHandler(this)
         db = dbHandler.writableDatabase
 //        db = DatabaseHandler(null)
-//        dbHandler.addUser("User", "Donna", "password")
+        dbHandler.addUser("User", "Donna", "password")
 //        db.Add(EmployeeAdapter)
         initViews()
 
