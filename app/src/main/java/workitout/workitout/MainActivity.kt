@@ -13,6 +13,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        getWindow().getDecorView().setBackgroundColor(getResources().getColor(android.R.color.background_light));
+
+
         setSupportActionBar(toolbar)
 
         menu.setOnClickListener {
