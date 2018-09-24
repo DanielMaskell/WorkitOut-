@@ -67,8 +67,8 @@ class DatabaseHandler : SQLiteOpenHelper {
         return msg
     }
 
-    fun Fetch(keyword: String): ArrayList<UserDetails> {
-        var arraylist = ArrayList<UserDetails>()
+    fun Fetch(keyword: String): ArrayList<EmployeeDetails> {
+        var arraylist = ArrayList<EmployeeDetails>()
         val sqb = SQLiteQueryBuilder()
         sqb.tables = tableName
         val cols = arrayOf("employee_id", "f_name", "l_name",
@@ -76,7 +76,7 @@ class DatabaseHandler : SQLiteOpenHelper {
                 , "thursday_avail", "friday_avail", "saturday_avail",
                 "sunday_avail", "home_phone", "mobile_phone", "home_address", "email_address", "role")
         val rowSelArg = arrayOf(keyword)
-        val cur = sqb.query(sqlObj, cols, "fname like ?", rowSelArg, null, null, "fname")
+        val cur = sqb.query(sqlObj, cols, "f_name like ?", rowSelArg, null, null, "f_name")
         if (cur.moveToFirst()) {
             do {
                 val employeeIDCursor = cur.getString(cur.getColumnIndex("employee_id"))
@@ -95,7 +95,7 @@ class DatabaseHandler : SQLiteOpenHelper {
                 val homeAddressCursor = cur.getString(cur.getColumnIndex("home_address"))
                 val emailAddressCursor = cur.getString(cur.getColumnIndex("email_address"))
                 val roleCursor = Role.valueOf(cur.getString(cur.getColumnIndex("role")))
-                arraylist.add(UserDetails(employeeIDCursor, fNameCursor, lNameCursor, passwordCursor, mondayAvailCursor,
+                arraylist.add(EmployeeDetails(employeeIDCursor, fNameCursor, lNameCursor, passwordCursor, mondayAvailCursor,
                         tuesdayAvailCursor, wednesdayAvailCursor, thursdayAvailCursor, fridayAvailCursor, saturdayAvailCursor,
                         sundayAvailCursor, homePhoneCursor, mobilePhoneCursor, homeAddressCursor, emailAddressCursor, roleCursor))
             } while (cur.moveToNext())
