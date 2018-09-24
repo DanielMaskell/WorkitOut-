@@ -32,8 +32,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
 
     //static id and password
-    private val id="id"
-    private val password="psw"
+    private val id = "id"
+    private val password = "psw"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,19 +53,16 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         appCompatButtonLogin.setOnClickListener {
             val inputLogin = textInputEditTextID.text!!.trim().toString()
             val inputPassword = textInputEditTextPassword.text!!.trim().toString()
-            if(inputLogin==id && inputPassword==password) {
+            if (inputLogin == id && inputPassword == password) {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 Toast.makeText(this, "Login Succeed", Toast.LENGTH_SHORT).show()
-            }
-            else {
+            } else {
                 if (inputLogin.isNullOrEmpty() && inputPassword.isNullOrEmpty()) {
                     Toast.makeText(this, "Please enter the USER ID and PASSWORD", Toast.LENGTH_SHORT).show()
-                }
-                else if (inputLogin != id) {
+                } else if (inputLogin != id) {
                     Toast.makeText(this, "Wrong USER ID", Toast.LENGTH_SHORT).show()
-                }
-                else {
+                } else {
                     Toast.makeText(this, "Wrong PASSWORD", Toast.LENGTH_SHORT).show()
                 }
             }

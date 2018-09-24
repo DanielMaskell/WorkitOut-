@@ -23,9 +23,14 @@ class MenuActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        Calendar.setOnClickListener{
-            val calendarActivity = Intent(this@MenuActivity, calendarActivity::class.java)
+        Calendar.setOnClickListener {
+            val calendarActivity = Intent(this@MenuActivity, CalendarActivity::class.java)
             startActivity(calendarActivity)
+        }
+
+        btFilterMyWork.setOnClickListener {
+            val intent = Intent(this, FilterMyWorkActivity::class.java)
+            startActivity(intent)
         }
     }
 }
