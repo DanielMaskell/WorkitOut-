@@ -1,72 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <Button
+        android:id="@+id/btMonday_work"
+        android:layout_width="155dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="180dp"
+        android:clickable="true"
+        android:text="Monday_Work"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btTuesday_Work"
+        android:layout_width="155dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="180dp"
+        android:clickable="true"
+        android:text="Tuesday_Work"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btWednesday_Work"
+        android:layout_width="155dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="300dp"
+        android:clickable="true"
+        android:text="Wednesday_Work"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btThursday_Work"
+        android:layout_width="155dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="300dp"
+        android:clickable="true"
+        android:text="Thursday_Work"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btFriday_Work"
+        android:layout_width="155dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="420dp"
+        android:clickable="true"
+        android:text="Friday_Work"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btExtra_Work"
+        android:layout_width="155dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="420dp"
+        android:clickable="true"
+        android:text="Extra_Work"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/button8"
-        android:layout_width="160dp"
-        android:layout_height="80dp"
-        android:text="Filter My Work"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="47dp" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="142dp"
-        android:layout_height="74dp"
-        android:text="Back To Menu"
-        tools:layout_editor_absoluteX="224dp"
-        tools:layout_editor_absoluteY="47dp" />
-
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="163dp"
-        android:layout_height="52dp"
-        android:text="Monday Work"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="179dp" />
-
-    <Button
-        android:id="@+id/button11"
-        android:layout_width="141dp"
-        android:layout_height="55dp"
-        android:text="Tuesday Work"
-        tools:layout_editor_absoluteX="227dp"
-        tools:layout_editor_absoluteY="179dp" />
-
-    <Button
-        android:id="@+id/button12"
-        android:layout_width="167dp"
-        android:layout_height="55dp"
-        android:text="Wednesday Work"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="261dp" />
-
-    <Button
-        android:id="@+id/button13"
-        android:layout_width="139dp"
-        android:layout_height="55dp"
-        android:text="Thursday Work"
-        tools:layout_editor_absoluteX="227dp"
-        tools:layout_editor_absoluteY="261dp" />
-
-    <Button
-        android:id="@+id/button14"
-        android:layout_width="170dp"
-        android:layout_height="59dp"
-        android:text="Friday Work"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="361dp" />
-
-    <Button
-        android:id="@+id/button15"
-        android:layout_width="136dp"
-        android:layout_height="62dp"
-        android:text="Extra Work"
-        tools:layout_editor_absoluteX="227dp"
-        tools:layout_editor_absoluteY="361dp" />
+        android:layout_width="313dp"
+        android:layout_height="81dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="Filter My Weekday Work"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.091" />
 
 </android.support.constraint.ConstraintLayout>

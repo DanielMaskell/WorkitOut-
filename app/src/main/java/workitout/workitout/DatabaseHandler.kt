@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteOpenHelper
 import android.content.Context
 import android.content.ContentValues
 import android.database.sqlite.SQLiteQueryBuilder
+import android.support.annotation.IntegerRes
 import java.util.ArrayList
 
 class DatabaseHandler : SQLiteOpenHelper {
@@ -30,7 +31,7 @@ class DatabaseHandler : SQLiteOpenHelper {
         val mobilePhone = "mobile_phone"
         val homeAddress = "home_address"
         val emailAddress = "email_address"
-        val role = "role"
+        //val role = "role"
     }
 
     var context: Context? = null
@@ -44,12 +45,12 @@ class DatabaseHandler : SQLiteOpenHelper {
     override fun onCreate(p0: SQLiteDatabase?) {
 //SQL for creating table
         var createSQL: String = "CREATE TABLE IF NOT EXISTS " + tableName + " " +
-                "(" + employeeID + " INTEGER PRIMARY KEY," +
+                "(" + employeeID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 fName + " TEXT, " + lName + " TEXT, " + password +
                 " TEXT," + mondayAvail + " TEXT, " + tuesdayAvail + " TEXT, " + wednesdayAvail +
                 " TEXT," + thursdayAvail + " TEXT, " + fridayAvail + " TEXT, " + saturdayAvail +
                 " TEXT," + sundayAvail + " TEXT, " + homePhone + " TEXT, " + mobilePhone +
-                " TEXT," + homeAddress + " TEXT, " + emailAddress + " TEXT, " + role + " TEXT );"
+                " TEXT," + homeAddress + " TEXT, " + emailAddress + " TEXT );" // role +
         p0!!.execSQL(createSQL)
     }
 
@@ -74,7 +75,7 @@ class DatabaseHandler : SQLiteOpenHelper {
         val cols = arrayOf("employee_id", "f_name", "l_name",
                 "password", "monday_avail", "tuesday_avail", "wednesday_avail"
                 , "thursday_avail", "friday_avail", "saturday_avail",
-                "sunday_avail", "home_phone", "mobile_phone", "home_address", "email_address", "role")
+                "sunday_avail", "home_phone", "mobile_phone", "home_address", "email_address") //"role")
         val rowSelArg = arrayOf(keyword)
         val cur = sqb.query(sqlObj, cols, "f_name like ?", rowSelArg, null, null, "f_name")
         if (cur.moveToFirst()) {
@@ -88,16 +89,16 @@ class DatabaseHandler : SQLiteOpenHelper {
                 val wednesdayAvailCursor = cur.getString(cur.getColumnIndex("wednesday_avail"))
                 val thursdayAvailCursor = cur.getString(cur.getColumnIndex("thursday_avail"))
                 val fridayAvailCursor = cur.getString(cur.getColumnIndex("friday_avail"))
-                val saturdayAvailCursor = cur.getString(cur.getColumnIndex("satudrday_avail"))
+                val saturdayAvailCursor = cur.getString(cur.getColumnIndex("saturday_avail"))
                 val sundayAvailCursor = cur.getString(cur.getColumnIndex("sunday_avail"))
                 val homePhoneCursor = cur.getString(cur.getColumnIndex("home_phone"))
                 val mobilePhoneCursor = cur.getString(cur.getColumnIndex("mobile_phone"))
                 val homeAddressCursor = cur.getString(cur.getColumnIndex("home_address"))
                 val emailAddressCursor = cur.getString(cur.getColumnIndex("email_address"))
-                val roleCursor = Role.valueOf(cur.getString(cur.getColumnIndex("role")))
+                //val roleCursor = Role.valueOf(cur.getString(cur.getColumnIndex("role")))
                 arraylist.add(EmployeeDetails(employeeIDCursor, fNameCursor, lNameCursor, passwordCursor, mondayAvailCursor,
                         tuesdayAvailCursor, wednesdayAvailCursor, thursdayAvailCursor, fridayAvailCursor, saturdayAvailCursor,
-                        sundayAvailCursor, homePhoneCursor, mobilePhoneCursor, homeAddressCursor, emailAddressCursor, roleCursor))
+                        sundayAvailCursor, homePhoneCursor, mobilePhoneCursor, homeAddressCursor, emailAddressCursor))
             } while (cur.moveToNext())
         }
         var count: Int = arraylist.size
@@ -106,7 +107,7 @@ class DatabaseHandler : SQLiteOpenHelper {
 
     fun Update(values: ContentValues, id: Int): String {
         var selectionArs = arrayOf(id.toString())
-        val i = sqlObj!!.update(tableName, values, "id=?", selectionArs)
+        val i = sqlObj!!.update(tableName, values, "employee_id=?", selectionArs)
         if (i > 0) {
             return "ok"
         } else {
@@ -116,7 +117,7 @@ class DatabaseHandler : SQLiteOpenHelper {
 
     fun Remove(id: Int): String {
         var selectionArs = arrayOf(id.toString())
-        val i = sqlObj!!.delete(tableName, "id=?", selectionArs)
+        val i = sqlObj!!.delete(tableName, "employee_id=?", selectionArs)
         if (i > 0) {
             return "ok"
         } else {
@@ -126,16 +127,16 @@ class DatabaseHandler : SQLiteOpenHelper {
 
     /**
      * Check user with a certain ID exists or not
-     * @param ID
+     * @param firstName
      * @return True or False
      */
-    fun checkUser(id: String): Boolean {
-        val columns = arrayOf(employeeID)
+    fun checkUser(firstName: String): Boolean {
+        val columns = arrayOf(fName)
         val db = this.readableDatabase
 
-        val selection = "$employeeID = ?"
+        val selection = "$fName = ?"
 
-        val selectionArgs = arrayOf(id)
+        val selectionArgs = arrayOf(firstName)
 
         val cursor = db.query(tableName, columns, selection, selectionArgs, null, null, null)
 
@@ -153,17 +154,17 @@ class DatabaseHandler : SQLiteOpenHelper {
     /**
      * method checking user exist or not
      *
-     * @param ID
+     * @param firstName
      * @param password
      * @return true or false
      */
-    fun checkUser(id: String, psw: String): Boolean {
-        val columns = arrayOf(employeeID)
+    fun checkUser(firstName: String, psw: String): Boolean {
+        val columns = arrayOf(fName)
         val db = this.readableDatabase
 
-        val selection = "$employeeID = ? AND $password = ?"
+        val selection = "$fName = ? AND $password = ?"
 
-        val selectionArgs = arrayOf(id, psw)
+        val selectionArgs = arrayOf(firstName, psw)
 
         val cursor = db.query(tableName, columns, selection, selectionArgs, null, null, null)
 
@@ -176,5 +177,33 @@ class DatabaseHandler : SQLiteOpenHelper {
         }
 
         return false
+    }
+
+    /**
+     * Demo method
+     * Add user
+     * @param userID, userfName, userlName, password
+     */
+    fun addUser(firstName: String, lastName: String, psw: String){
+        val db = this.writableDatabase
+
+        val values = ContentValues()
+        values.put("$fName", firstName)
+        values.put("$lName", lastName)
+        values.put("$password",psw)
+        values.put("$mondayAvail", "")
+        values.put("$tuesdayAvail", "")
+        values.put("$wednesdayAvail", "")
+        values.put("$thursdayAvail", "")
+        values.put("$fridayAvail", "")
+        values.put("$saturdayAvail", "")
+        values.put("$sundayAvail", "")
+        values.put("$homePhone", "")
+        values.put("$mobilePhone", "")
+        values.put("$homeAddress", "")
+        values.put("$emailAddress", "")
+
+        db.insert(tableName, null, values)
+        db.close()
     }
 }

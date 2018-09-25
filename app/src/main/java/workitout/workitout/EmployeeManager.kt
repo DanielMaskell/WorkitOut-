@@ -17,11 +17,11 @@ class EmployeeManager : AppCompatActivity() {
 
         if (record_id == 0) { //Add Record
 
-            save_btn.text = "Add Contact"
+            save_btn.text = "Add Employee"
 
         } else { //Update Record
 
-            save_btn.text = "Update Contact"
+            save_btn.text = "Update Employee"
             var _fname = intent.getStringExtra("fname")
             var _lname = intent.getStringExtra("lname")
             var _email = intent.getStringExtra("email")
@@ -43,7 +43,7 @@ class EmployeeManager : AppCompatActivity() {
 
             if (a == "") {
 
-                Toast.makeText(this, "Enter FirstName",
+                Toast.makeText(this, "Enter First Name",
                         Toast.LENGTH_SHORT).show()
 
             } else if (d == "") {
@@ -54,10 +54,10 @@ class EmployeeManager : AppCompatActivity() {
             } else {
 
                 var values = ContentValues()
-                values.put("fname", a)
-                values.put("lname", b)
-                values.put("email", c)
-                values.put("number", d)
+                values.put("f_name", a)
+                values.put("l_name", b)
+                values.put("email_address", c)
+                values.put("mobile_phone", d)
 
                 if (record_id == 0) {
 
@@ -67,7 +67,7 @@ class EmployeeManager : AppCompatActivity() {
                     var response = DB.Add(values);
                     if (response == "ok") {
 
-                        Toast.makeText(this, "Contact Added",
+                        Toast.makeText(this, "Employee Added",
                                 Toast.LENGTH_SHORT).show()
 
                         var intent = Intent(this, MainActivity::class.java)
@@ -80,11 +80,11 @@ class EmployeeManager : AppCompatActivity() {
                     }
                 } else {
 
-                    var DB = DatabaseHandler(this);
+                    var DB = DatabaseHandler(this)
                     var res: String = DB.Update(values, record_id)
 
                     if (res == "ok") {
-                        Toast.makeText(this, "Contact Updated",
+                        Toast.makeText(this, "Employee Updated",
                                 Toast.LENGTH_SHORT).show()
                         var intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
@@ -104,7 +104,7 @@ class EmployeeManager : AppCompatActivity() {
 
             if (res == "ok") {
 
-                Toast.makeText(this, "Contact Deleted",
+                Toast.makeText(this, "Employee Deleted",
                         Toast.LENGTH_SHORT).show()
             } else {
 

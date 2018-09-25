@@ -21,15 +21,20 @@
         <activity android:name=".LoginActivity" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".AvailabilityActivity" />
-        <activity android:name=".EmployeeManager"/>
+        <activity android:name=".EmployeeManager" />
         <activity
             android:name=".CalendarActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".DetailsActivity" />
         <activity android:name=".FilterMyWorkActivity" />
+        <activity android:name=".FilterMondayActivity" />
+        <activity android:name=".FilterTuesdayActivity" />
+        <activity android:name=".FilterMyTursdayActivity" />
+        <activity android:name=".FilterMyFridayActivity" />
+        <activity android:name=".FilterMyExtraWorkActivity"></activity>
     </application>
 
 </manifest>
