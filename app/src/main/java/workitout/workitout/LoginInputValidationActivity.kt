@@ -11,18 +11,20 @@ import android.view.inputmethod.InputMethodManager
 class LoginInputValidationActivity
 
 /**
- * Constructor
+ * constructor
+ *
+ * @param context
  */
 (private val context: Context) {
 
     /**
-     * method checking if InputEditText filled
+     * method to check InputEditText filled .
+     *
      * @param textInputEditText
-     * @param textInputEditLayout
+     * @param textInputLayout
      * @param message
      * @return
      */
-
     fun isInputEditTextFilled(textInputEditText: TextInputEditText, textInputLayout: TextInputLayout, message: String): Boolean {
         val value = textInputEditText.text.toString().trim()
         if (value.isEmpty()) {
@@ -36,8 +38,30 @@ class LoginInputValidationActivity
         return true
     }
 
+
     /**
-     * method checking InputEditText value matches
+     * method to check InputEditText has valid email .
+     *
+     * @param textInputEditText
+     * @param textInputLayout
+     * @param message
+     * @return
+     */
+    fun isInputEditTextUserName(textInputEditText: TextInputEditText, textInputLayout: TextInputLayout, message: String): Boolean {
+        val value = textInputEditText.text.toString().trim()
+        if (value.isEmpty()) {
+            textInputLayout.error = message
+            hideKeyboardFrom(textInputEditText)
+            return false
+        } else {
+            textInputLayout.isErrorEnabled = false
+        }
+        return true
+    }
+
+    /**
+     * method to check both InputEditText value matches.
+     *
      * @param textInputEditText1
      * @param textInputEditText2
      * @param textInputLayout
@@ -54,11 +78,16 @@ class LoginInputValidationActivity
         } else {
             textInputLayout.isErrorEnabled = false
         }
-        return false
+        return true
     }
 
+    /**
+     * method to Hide keyboard
+     *
+     * @param view
+     */
     private fun hideKeyboardFrom(view: View) {
-        val i = context.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
-        i.hideSoftInputFromWindow(view.windowToken, WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
+        val imm = context.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(view.windowToken, WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
     }
 }

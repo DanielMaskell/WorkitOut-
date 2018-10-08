@@ -24,7 +24,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".AvailabilityActivity" />
-        <activity android:name=".EmployeeManager" />
+        <activity android:name=".UsersListActivity" />
         <activity
             android:name=".CalendarActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -32,9 +32,10 @@
         <activity android:name=".FilterMyWorkActivity" />
         <activity android:name=".FilterMondayActivity" />
         <activity android:name=".FilterTuesdayActivity" />
-        <activity android:name=".FilterMyTursdayActivity" />
         <activity android:name=".FilterMyFridayActivity" />
-        <activity android:name=".FilterMyExtraWorkActivity"></activity>
+        <activity android:name=".FilterMyExtraWorkActivity" />
+        <activity android:name=".FilterMyWednesdayActivity" />
+        <activity android:name=".FilterMyThursdayActivity"></activity>
     </application>
 
 </manifest>

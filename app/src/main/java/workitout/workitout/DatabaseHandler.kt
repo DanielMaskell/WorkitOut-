@@ -1,209 +1,283 @@
 package workitout.workitout
 
+import android.content.ContentValues
+import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.content.Context
-import android.content.ContentValues
-import android.database.sqlite.SQLiteQueryBuilder
-import android.support.annotation.IntegerRes
-import java.util.ArrayList
+import java.util.*
 
-class DatabaseHandler : SQLiteOpenHelper {
+class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     companion object {
-        val Tag = "DatabaseHandler"
-        val DBName = "EmployeeDB"
-        val DBVersion = 1
-        val tableName = "employeeTable"
 
-        val employeeID = "employee_id"
-        val fName = "f_name"
-        val lName = "l_name"
-        val password = "password"
-        val mondayAvail = "monday_avail"
-        val tuesdayAvail = "tuesday_avail"
-        val wednesdayAvail = "wednesday_avail"
-        val thursdayAvail = "thursday_avail"
-        val fridayAvail = "friday_avail"
-        val saturdayAvail = "saturday_avail"
-        val sundayAvail = "sunday_avail"
-        val homePhone = "home_phone"
-        val mobilePhone = "mobile_phone"
-        val homeAddress = "home_address"
-        val emailAddress = "email_address"
-        //val role = "role"
+        private val DATABASE_VERSION = 1
+
+        private val DATABASE_NAME = "WorkItOut.db"
+
+        private val TABLE_USER = "user"
+
+        private val COLUMN_USER_ID = "user_id"
+        private val COLUMN_USER_F_NAME = "user_f_name"
+        private val COLUMN_USER_L_NAME = "user_l_name"
+        private val COLUMN_USER_NAME = "user_name"
+        private val COLUMN_USER_PASSWORD = "user_password"
+        private val COLUMN_USER_EMAIL_Address = "user_email_address"
+        private val COLUMN_USER_HOME_Address = "user_home_address"
+        private val COLUMN_USER_HOME_PHONE = "user_home_phone"
+        private val COLUMN_USER_MOBILE_PHONE = "user_mobile_phone"
+        private val COLUMN_USER_TYPE = "user_type"
+        private val COLUMN_EMPLOYEE_NUMBER = "employee_number"
+        private val COLUMN_CONTRACT_TYPE = "contract_type"
+        private val COLUMN_LOGGED_IN = "logged_in"
+        private val COLUMN_MONDAY_AVAIL = "monday_avail"
+        private val COLUMN_TUESDAY_AVAIL = "tuesday_avail"
+        private val COLUMN_WEDNESDAY_AVAIL = "wednesday_avail"
+        private val COLUMN_THURSDAY_AVAIL = "thursday_avail"
+        private val COLUMN_FRIDAY_AVAIL = "friday_avail"
+        private val COLUMN_SATURDAY_AVAIL = "saturday_avail"
+        private val COLUMN_SUNDAY_AVAIL = "sunday_avail"
     }
 
-    var context: Context? = null
-    var sqlObj: SQLiteDatabase
+    private val CREATE_USER_TABLE = ("CREATE TABLE " + TABLE_USER + "("
+            + COLUMN_USER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," + COLUMN_USER_F_NAME + " TEXT,"
+            + COLUMN_USER_L_NAME + " TEXT," + COLUMN_USER_NAME + " TEXT," + COLUMN_USER_PASSWORD + " TEXT," + COLUMN_USER_TYPE + " TEXT,"
+            + COLUMN_EMPLOYEE_NUMBER + " TEXT," + COLUMN_USER_HOME_PHONE + " TEXT," + COLUMN_USER_MOBILE_PHONE + " TEXT,"
+            + COLUMN_USER_EMAIL_Address + " TEXT," + COLUMN_USER_HOME_Address + " TEXT," + COLUMN_CONTRACT_TYPE + " TEXT,"
+            + COLUMN_LOGGED_IN + " INTEGER," + COLUMN_MONDAY_AVAIL + " INTEGER," + COLUMN_TUESDAY_AVAIL + " INTEGER," + COLUMN_WEDNESDAY_AVAIL + " INTEGER,"
+            + COLUMN_THURSDAY_AVAIL + " INTEGER," + COLUMN_FRIDAY_AVAIL + " INTEGER," + COLUMN_SATURDAY_AVAIL + " INTEGER," + COLUMN_SUNDAY_AVAIL + " INTEGER" + ");")
 
-    constructor(context: Context) : super(context, DBName, null, DBVersion) {
-        this.context = context
-        sqlObj = this.writableDatabase
+    private val DROP_USER_TABLE = "DROP TABLE IF EXISTS $TABLE_USER"
+
+    override fun onCreate(db: SQLiteDatabase) {
+        db.execSQL(CREATE_USER_TABLE)
     }
 
-    override fun onCreate(p0: SQLiteDatabase?) {
-//SQL for creating table
-        var createSQL: String = "CREATE TABLE IF NOT EXISTS " + tableName + " " +
-                "(" + employeeID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                fName + " TEXT, " + lName + " TEXT, " + password +
-                " TEXT," + mondayAvail + " TEXT, " + tuesdayAvail + " TEXT, " + wednesdayAvail +
-                " TEXT," + thursdayAvail + " TEXT, " + fridayAvail + " TEXT, " + saturdayAvail +
-                " TEXT," + sundayAvail + " TEXT, " + homePhone + " TEXT, " + mobilePhone +
-                " TEXT," + homeAddress + " TEXT, " + emailAddress + " TEXT );" // role +
-        p0!!.execSQL(createSQL)
-    }
-
-    override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {
-        p0!!.execSQL("Drop table IF EXISTS " + tableName)
-        onCreate(p0)
-    }
-
-    fun Add(values: ContentValues): String {
-        var msg: String = "error";
-        val id = sqlObj!!.insert(tableName, "", values)
-        if (id > 0) {
-            msg = "ok"
-        }
-        return msg
-    }
-
-    fun Fetch(keyword: String): ArrayList<EmployeeDetails> {
-        var arraylist = ArrayList<EmployeeDetails>()
-        val sqb = SQLiteQueryBuilder()
-        sqb.tables = tableName
-        val cols = arrayOf("employee_id", "f_name", "l_name",
-                "password", "monday_avail", "tuesday_avail", "wednesday_avail"
-                , "thursday_avail", "friday_avail", "saturday_avail",
-                "sunday_avail", "home_phone", "mobile_phone", "home_address", "email_address") //"role")
-        val rowSelArg = arrayOf(keyword)
-        val cur = sqb.query(sqlObj, cols, "f_name like ?", rowSelArg, null, null, "f_name")
-        if (cur.moveToFirst()) {
-            do {
-                val employeeIDCursor = cur.getString(cur.getColumnIndex("employee_id"))
-                val fNameCursor = cur.getString(cur.getColumnIndex("f_name"))
-                val lNameCursor = cur.getString(cur.getColumnIndex("l_name"))
-                val passwordCursor = cur.getString(cur.getColumnIndex("password"))
-                val mondayAvailCursor = cur.getString(cur.getColumnIndex("monday_avail"))
-                val tuesdayAvailCursor = cur.getString(cur.getColumnIndex("tuesday_avail"))
-                val wednesdayAvailCursor = cur.getString(cur.getColumnIndex("wednesday_avail"))
-                val thursdayAvailCursor = cur.getString(cur.getColumnIndex("thursday_avail"))
-                val fridayAvailCursor = cur.getString(cur.getColumnIndex("friday_avail"))
-                val saturdayAvailCursor = cur.getString(cur.getColumnIndex("saturday_avail"))
-                val sundayAvailCursor = cur.getString(cur.getColumnIndex("sunday_avail"))
-                val homePhoneCursor = cur.getString(cur.getColumnIndex("home_phone"))
-                val mobilePhoneCursor = cur.getString(cur.getColumnIndex("mobile_phone"))
-                val homeAddressCursor = cur.getString(cur.getColumnIndex("home_address"))
-                val emailAddressCursor = cur.getString(cur.getColumnIndex("email_address"))
-                //val roleCursor = Role.valueOf(cur.getString(cur.getColumnIndex("role")))
-                arraylist.add(EmployeeDetails(employeeIDCursor, fNameCursor, lNameCursor, passwordCursor, mondayAvailCursor,
-                        tuesdayAvailCursor, wednesdayAvailCursor, thursdayAvailCursor, fridayAvailCursor, saturdayAvailCursor,
-                        sundayAvailCursor, homePhoneCursor, mobilePhoneCursor, homeAddressCursor, emailAddressCursor))
-            } while (cur.moveToNext())
-        }
-        var count: Int = arraylist.size
-        return arraylist
-    }
-
-    fun Update(values: ContentValues, id: Int): String {
-        var selectionArs = arrayOf(id.toString())
-        val i = sqlObj!!.update(tableName, values, "employee_id=?", selectionArs)
-        if (i > 0) {
-            return "ok"
-        } else {
-            return "error"
-        }
-    }
-
-    fun Remove(id: Int): String {
-        var selectionArs = arrayOf(id.toString())
-        val i = sqlObj!!.delete(tableName, "employee_id=?", selectionArs)
-        if (i > 0) {
-            return "ok"
-        } else {
-            return "error"
-        }
+    override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
+        db.execSQL(DROP_USER_TABLE)
+        onCreate(db)
     }
 
     /**
-     * Check user with a certain ID exists or not
-     * @param firstName
-     * @return True or False
-     */
-    fun checkUser(firstName: String): Boolean {
-        val columns = arrayOf(fName)
-        val db = this.readableDatabase
-
-        val selection = "$fName = ?"
-
-        val selectionArgs = arrayOf(firstName)
-
-        val cursor = db.query(tableName, columns, selection, selectionArgs, null, null, null)
-
-        val cursorCount = cursor.count
-        cursor.close()
-        db.close()
-
-        if (cursorCount > 0) {
-            return true
-        }
-
-        return false
-    }
-
-    /**
-     * method checking user exist or not
+     * This method is to fetch all user and return the list of user records
      *
-     * @param firstName
-     * @param password
-     * @return true or false
+     * @return list
      */
-    fun checkUser(firstName: String, psw: String): Boolean {
-        val columns = arrayOf(fName)
+    fun getAllUser(): List<User> {
+
+        val columns = arrayOf( COLUMN_USER_ID, COLUMN_USER_F_NAME, COLUMN_USER_L_NAME, COLUMN_USER_NAME, COLUMN_USER_PASSWORD, COLUMN_USER_EMAIL_Address,
+                COLUMN_USER_HOME_Address, COLUMN_USER_HOME_PHONE, COLUMN_USER_MOBILE_PHONE, COLUMN_USER_TYPE, COLUMN_EMPLOYEE_NUMBER, COLUMN_CONTRACT_TYPE, COLUMN_LOGGED_IN,
+                COLUMN_MONDAY_AVAIL, COLUMN_TUESDAY_AVAIL, COLUMN_WEDNESDAY_AVAIL, COLUMN_THURSDAY_AVAIL, COLUMN_FRIDAY_AVAIL, COLUMN_SATURDAY_AVAIL, COLUMN_SUNDAY_AVAIL)
+
+        val sortOrder = "$COLUMN_USER_NAME ASC"
+        val userList = ArrayList<User>()
+
         val db = this.readableDatabase
 
-        val selection = "$fName = ? AND $password = ?"
+        val cursor = db.query(TABLE_USER, columns,null,null,null,null,sortOrder)
 
-        val selectionArgs = arrayOf(firstName, psw)
-
-        val cursor = db.query(tableName, columns, selection, selectionArgs, null, null, null)
-
-        val cursorCount = cursor.count
+        if (cursor.moveToFirst()) {
+            do {
+                val user = User(id = cursor.getString(cursor.getColumnIndex(COLUMN_USER_ID)).toInt(),
+                        fName = cursor.getString(cursor.getColumnIndex(COLUMN_USER_F_NAME)),
+                        lName = cursor.getString(cursor.getColumnIndex(COLUMN_USER_L_NAME)),
+                        userName = cursor.getString(cursor.getColumnIndex(COLUMN_USER_NAME)),
+                        password = cursor.getString(cursor.getColumnIndex(COLUMN_USER_PASSWORD)),
+                        emailAddress = cursor.getString(cursor.getColumnIndex(COLUMN_USER_EMAIL_Address)),
+                        homeAddress = cursor.getString(cursor.getColumnIndex(COLUMN_USER_HOME_Address)),
+                        homePhone = cursor.getString(cursor.getColumnIndex(COLUMN_USER_HOME_PHONE)),
+                        mobilePhone = cursor.getString(cursor.getColumnIndex(COLUMN_USER_MOBILE_PHONE)),
+                        userType = cursor.getString(cursor.getColumnIndex(COLUMN_USER_TYPE)),
+                        employeeNumber = cursor.getString(cursor.getColumnIndex(COLUMN_EMPLOYEE_NUMBER)),
+                        contractType = cursor.getString(cursor.getColumnIndex(COLUMN_CONTRACT_TYPE)),
+                        loggedIn = cursor.getString(cursor.getColumnIndex(COLUMN_LOGGED_IN))!!.toBoolean(),
+                        monAvail = cursor.getString(cursor.getColumnIndex(COLUMN_MONDAY_AVAIL))!!.toBoolean(),
+                        tueAvail = cursor.getString(cursor.getColumnIndex(COLUMN_TUESDAY_AVAIL))!!.toBoolean(),
+                        wedAvail = cursor.getString(cursor.getColumnIndex(COLUMN_WEDNESDAY_AVAIL))!!.toBoolean(),
+                        thuAvail = cursor.getString(cursor.getColumnIndex(COLUMN_THURSDAY_AVAIL))!!.toBoolean(),
+                        friAvail = cursor.getString(cursor.getColumnIndex(COLUMN_FRIDAY_AVAIL))!!.toBoolean(),
+                        satAvail = cursor.getString(cursor.getColumnIndex(COLUMN_SATURDAY_AVAIL))!!.toBoolean(),
+                        sunAvail = cursor.getString(cursor.getColumnIndex(COLUMN_SUNDAY_AVAIL))!!.toBoolean()
+                )
+                userList.add(user)
+            } while (cursor.moveToNext())
+        }
         cursor.close()
         db.close()
-
-        if (cursorCount > 0) {
-            return true
-        }
-
-        return false
+        return userList
     }
 
+
     /**
-     * Demo method
-     * Add user
-     * @param userID, userfName, userlName, password
+     * This method is to create user record
+     *
+     * @param user
      */
-    fun addUser(firstName: String, lastName: String, psw: String){
+    fun addUser(user: User) {
         val db = this.writableDatabase
 
         val values = ContentValues()
-        values.put("$fName", firstName)
-        values.put("$lName", lastName)
-        values.put("$password",psw)
-        values.put("$mondayAvail", "")
-        values.put("$tuesdayAvail", "")
-        values.put("$wednesdayAvail", "")
-        values.put("$thursdayAvail", "")
-        values.put("$fridayAvail", "")
-        values.put("$saturdayAvail", "")
-        values.put("$sundayAvail", "")
-        values.put("$homePhone", "")
-        values.put("$mobilePhone", "")
-        values.put("$homeAddress", "")
-        values.put("$emailAddress", "")
+        values.put(COLUMN_USER_F_NAME, user.fName)
+        values.put(COLUMN_USER_L_NAME, user.lName)
+        values.put(COLUMN_USER_NAME, user.fName + user.lName)
+        values.put(COLUMN_USER_PASSWORD, user.password)
+        values.put(COLUMN_USER_EMAIL_Address, user.emailAddress)
+        values.put(COLUMN_USER_HOME_Address, user.homeAddress)
+        values.put(COLUMN_USER_HOME_PHONE, user.homePhone)
+        values.put(COLUMN_USER_MOBILE_PHONE, user.mobilePhone)
+        values.put(COLUMN_USER_TYPE, user.userType)
+        values.put(COLUMN_EMPLOYEE_NUMBER, user.employeeNumber)
+        values.put(COLUMN_CONTRACT_TYPE, user.contractType)
+        values.put(COLUMN_LOGGED_IN, user.loggedIn)
+        values.put(COLUMN_MONDAY_AVAIL, user.monAvail)
+        values.put(COLUMN_TUESDAY_AVAIL, user.tueAvail)
+        values.put(COLUMN_WEDNESDAY_AVAIL, user.wedAvail)
+        values.put(COLUMN_THURSDAY_AVAIL, user.thuAvail)
+        values.put(COLUMN_FRIDAY_AVAIL, user.friAvail)
+        values.put(COLUMN_SATURDAY_AVAIL, user.satAvail)
+        values.put(COLUMN_SUNDAY_AVAIL, user.sunAvail)
 
-        db.insert(tableName, null, values)
+        db.insert(TABLE_USER, null, values)
+        db.close()
+    }
+
+    /**
+     * This method to update user record
+     *
+     * @param user
+     */
+    fun updateUser(user: User) {
+        val db = this.writableDatabase
+
+        val values = ContentValues()
+        values.put(COLUMN_USER_F_NAME, user.fName)
+        values.put(COLUMN_USER_L_NAME, user.lName)
+        values.put(COLUMN_USER_NAME, user.fName + user.lName)
+        values.put(COLUMN_USER_PASSWORD, user.password)
+        values.put(COLUMN_USER_EMAIL_Address, user.emailAddress)
+        values.put(COLUMN_USER_HOME_Address, user.homeAddress)
+        values.put(COLUMN_USER_HOME_PHONE, user.homePhone)
+        values.put(COLUMN_USER_MOBILE_PHONE, user.mobilePhone)
+        values.put(COLUMN_USER_TYPE, user.userType)
+        values.put(COLUMN_EMPLOYEE_NUMBER, user.employeeNumber)
+        values.put(COLUMN_CONTRACT_TYPE, user.contractType)
+        values.put(COLUMN_LOGGED_IN, user.loggedIn)
+        values.put(COLUMN_MONDAY_AVAIL, user.monAvail)
+        values.put(COLUMN_TUESDAY_AVAIL, user.tueAvail)
+        values.put(COLUMN_WEDNESDAY_AVAIL, user.wedAvail)
+        values.put(COLUMN_THURSDAY_AVAIL, user.thuAvail)
+        values.put(COLUMN_FRIDAY_AVAIL, user.friAvail)
+        values.put(COLUMN_SATURDAY_AVAIL, user.satAvail)
+        values.put(COLUMN_SUNDAY_AVAIL, user.sunAvail)
+
+        db.update(TABLE_USER, values, "$COLUMN_USER_ID = ?",
+                arrayOf(user.id.toString()))
+        db.close()
+    }
+
+    /**
+     * This method is to delete user record
+     *
+     * @param user
+     */
+    fun deleteUser(user: User) {
+
+        val db = this.writableDatabase
+
+        db.delete(TABLE_USER, "$COLUMN_USER_ID = ?",
+                arrayOf(user.id.toString()))
+        db.close()
+    }
+
+    /**
+     * This method to check user exist or not
+     *
+     * @param userName
+     * @return true/false
+     */
+    fun checkUser(userName: String): Boolean {
+
+        val columns = arrayOf(COLUMN_USER_NAME)
+        val db = this.readableDatabase
+
+        val selection = "$COLUMN_USER_NAME = ?"
+
+        val selectionArgs = arrayOf(userName)
+
+        val cursor = db.query(TABLE_USER, columns, selection, selectionArgs,null,null,null)
+
+
+        val cursorCount = cursor.count
+        cursor.close()
+        db.close()
+
+        if (cursorCount > 0) {
+            return true
+        }
+
+        return false
+    }
+
+
+    /**
+     * This method to check user exist or not
+     *
+     * @param userNAme
+     * @param password
+     * @return true/false
+     */
+    fun checkUser(uName: String, password: String): Boolean {
+
+        val columns = arrayOf(COLUMN_USER_NAME)
+
+        val db = this.readableDatabase
+
+        val selection = "$COLUMN_USER_NAME = ? AND $COLUMN_USER_PASSWORD = ?"
+
+        val selectionArgs = arrayOf(uName, password)
+
+        val cursor = db.query(TABLE_USER,columns,selection,selectionArgs,null,null,null)
+
+        val cursorCount = cursor.count
+        cursor.close()
+        db.close()
+
+        if (cursorCount > 0)
+            return true
+
+        return false
+    }
+
+    /**
+     * DefaultUserAdmin
+     * Demo Method
+     * Add user
+     *
+     */
+    fun addUser(){
+        val db = this.writableDatabase
+
+        val values = ContentValues()
+        values.put(DatabaseHandler.COLUMN_USER_F_NAME, "Ad")
+        values.put(DatabaseHandler.COLUMN_USER_L_NAME, "min")
+        values.put(DatabaseHandler.COLUMN_USER_NAME, "Admin")
+        values.put(DatabaseHandler.COLUMN_USER_PASSWORD, "password")
+        values.put(DatabaseHandler.COLUMN_USER_EMAIL_Address, "abc@dfg.com")
+        values.put(DatabaseHandler.COLUMN_USER_HOME_Address, "")
+        values.put(DatabaseHandler.COLUMN_USER_HOME_PHONE, "01234567")
+        values.put(DatabaseHandler.COLUMN_USER_MOBILE_PHONE, "")
+        values.put(DatabaseHandler.COLUMN_USER_TYPE, Role.EMPLOYER.role)
+        values.put(DatabaseHandler.COLUMN_EMPLOYEE_NUMBER, "")
+        values.put(DatabaseHandler.COLUMN_CONTRACT_TYPE, ContractType.Employer.contractType)
+        values.put(DatabaseHandler.COLUMN_LOGGED_IN, false)
+        values.put(DatabaseHandler.COLUMN_MONDAY_AVAIL, true)
+        values.put(DatabaseHandler.COLUMN_TUESDAY_AVAIL, true)
+        values.put(DatabaseHandler.COLUMN_WEDNESDAY_AVAIL, true)
+        values.put(DatabaseHandler.COLUMN_THURSDAY_AVAIL, true)
+        values.put(DatabaseHandler.COLUMN_FRIDAY_AVAIL, true)
+        values.put(DatabaseHandler.COLUMN_SATURDAY_AVAIL, true)
+        values.put(DatabaseHandler.COLUMN_SUNDAY_AVAIL, true)
+
+        db.insert(TABLE_USER, null, values)
         db.close()
     }
 }
