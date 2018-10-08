@@ -16,8 +16,25 @@
     <string name="togglebutton6">ToggleButton6</string>
     <string name="togglebutton7">ToggleButton7</string>
     //Strings for LoginActivity//
-    <string name="buttonLogin">Login</string>
-    <string name="textViewPassword">PASSWORD</string>
-    <string name="textViewID">USER ID</string>
-    <string name="loginErrorMessage">Wrong Input</string>
+    <string name="hint_user_name">User Name</string>
+    <string name="hint_password">Password</string>
+    <string name="text_login">Login</string>
+    <string name="error_message_name">Enter Full Name</string>
+    <string name="error_message_password">Enter Password</string>
+    <string name="error_valid_username_password">Wrong User Name or Password</string>
+
+    //Strings for navigation//
+    <string name="nav_header_title">WorkItOut!</string>
+    <string name="nav_header_subtitle">example@notyetdone.donna</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="text_accounts">All Accounts</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    //Strings for add user activity//
+    <string name="hint_confirm_password">Confirm Password</string>
+    <string name="text_add_user">Add User</string>
+    <string name="error_password_match">Password Does Not Matches</string>
+    <string name="success_message">Add User Successful</string>
+
 </resources>

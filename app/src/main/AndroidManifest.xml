@@ -24,7 +24,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".AvailabilityActivity" />
-        <activity android:name=".EmployeeManager" />
+        <activity android:name=".UsersListActivity" />
         <activity
             android:name=".CalendarActivity"
             android:theme="@style/AppTheme.NoActionBar" />

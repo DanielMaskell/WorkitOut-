@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_detail_activity"
+            android:title="detail_activity" />
+        <item
+            android:id="@+id/nav_availability_activity"
+            android:title="availability_activity" />
+        <item
+            android:id="@+id/nav_calendar_activity"
+            android:title="calendar_activity" />
+        <item
+            android:id="@+id/nav_filter_my_work_activity"
+            android:title="filter_my_work" />
+    </group>
+
+    <item android:title="Nothing">
+        <menu>
+            <item
+                android:id="@+id/nav_list_of_users"
+                android:title="list_of_users" />
+            <item
+                android:id="@+id/nav_add_users"
+                android:title="add_users" />
+        </menu>
+    </item>
+
+</menu>

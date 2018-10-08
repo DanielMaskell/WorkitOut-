@@ -1,44 +1,44 @@
 package workitout.workitout
 
-import android.content.Context
+import android.support.v7.widget.AppCompatTextView
+import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import kotlinx.android.synthetic.main.list_block.view.*
 
-class EmployeeAdapter(con:Context, arrList:ArrayList<EmployeeDetails>): BaseAdapter() {
+class EmployeeAdapter(private val listUsers: List<User>) : RecyclerView.Adapter<EmployeeAdapter.UserViewHolder>() {
 
-    var arrayList = ArrayList<EmployeeDetails>()
-    var context: Context? = null
-    var myInflater: LayoutInflater? = null
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
+        // inflating recycler item view
+        val itemView = LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_user_recycler, parent, false)
 
-    init {
-
-        this.context    = con
-        this.myInflater = LayoutInflater.from(context)
-        this.arrayList  = arrList
+        return UserViewHolder(itemView)
     }
 
-    override fun getView(p0: Int, p1: View?, p2: ViewGroup?): View {
-
-        var myView = myInflater!!.inflate(R.layout.list_block,null)
-        var conObj = arrayList[p0]
-
-        var full_name : String = conObj.fName.toString() +" "+ conObj.lName.toString()
-        myView.contact_name.text = full_name
-        return myView
+    override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
+        holder.textViewName.text = listUsers[position].userName
+        holder.textViewPassword.text = listUsers[position].password
     }
 
-    override fun getItem(p0: Int): Any {
-        return arrayList[p0]
+    override fun getItemCount(): Int {
+        return listUsers.size
     }
 
-    override fun getItemId(p0: Int): Long {
-        return p0.toLong()
+
+    /**
+     * ViewHolder class
+     */
+    inner class UserViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+
+        var textViewName: AppCompatTextView
+        var textViewPassword: AppCompatTextView
+
+        init {
+            textViewName = view.findViewById<View>(R.id.textViewName) as AppCompatTextView
+            textViewPassword = view.findViewById<View>(R.id.textViewPassword) as AppCompatTextView
+        }
     }
 
-    override fun getCount(): Int {
-        return arrayList.size
-    }
+
 }
