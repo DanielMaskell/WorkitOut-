@@ -32,5 +32,15 @@ class MenuActivity : AppCompatActivity() {
             val intent = Intent(this, FilterMyWorkActivity::class.java)
             startActivity(intent)
         }
+
+        //btmanager_add_arrangement.setOnClickListener {
+            //val intent = Intent(this, manager_add_arrangement::class.java)
+           // startActivity(intent)
+       // }
+
+        //btadd_arrangement.setOnClickListener {
+          //  val intent = Intent(this, Manager_add_arrangementActivity::class.java)
+            //startActivity(intent)
+        //}
     }
 }

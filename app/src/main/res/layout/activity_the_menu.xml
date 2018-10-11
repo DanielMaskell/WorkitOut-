@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/relativeLayout"
     android:layout_alignParentLeft="true"
     android:layout_alignParentStart="true">
 
@@ -19,26 +20,25 @@
         android:id="@+id/details"
         android:layout_width="190dp"
         android:layout_height="140dp"
-        android:text="DETAILS"
-        android:layout_alignParentLeft="true"
-        android:layout_marginTop="82dp"
-        android:clickable="true" />
+        android:layout_marginTop="80dp"
+        android:clickable="true"
+        android:text="DETAILS" />
 
     <Button
         android:id="@+id/schedule"
         android:layout_width="190dp"
         android:layout_height="140dp"
-        android:text="SCHEDULE"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="82dp"
-        android:clickable="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/roster"
+        android:clickable="true"
+        android:text="SCHEDULE" />
 
     <Button
         android:id="@+id/notifications"
         android:layout_width="190dp"
         android:layout_height="140dp"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/details"
+        android:layout_centerVertical="true"
         android:clickable="true"
         android:text="NOTIFICATIONS" />
 
@@ -47,19 +47,27 @@
         android:layout_width="190dp"
         android:layout_height="140dp"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/details"
+        android:layout_centerVertical="true"
         android:clickable="true"
         android:text="CALENDAR" />
 
     <Button
         android:id="@+id/btFilterMyWork"
         android:layout_width="190dp"
-        android:layout_height="140dp"
-        android:layout_alignParentBottom="true"
+        android:layout_height="197dp"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/Calendar"
-        android:layout_marginStart="1dp"
+        android:layout_below="@+id/notifications"
         android:clickable="true"
         android:text="FilterMyWork" />
+
+    <Button
+        android:id="@+id/btmanager_add_arrangement"
+        android:layout_width="183dp"
+        android:layout_height="186dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="0dp"
+        android:text="addarrangement" />
 
 </RelativeLayout>

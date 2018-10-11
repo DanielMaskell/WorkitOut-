@@ -61,6 +61,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 val intent = Intent(this, FilterMyWorkActivity::class.java)
                 startActivity(intent)
             }
+            R.id.nav_manager_add_arrangement -> {
+                val intent = Intent(this, manager_add_arrangement::class.java)
+                startActivity(intent)
+            }
             R.id.nav_list_of_users -> {
                 val intent = Intent(this, UsersListActivity::class.java)
                 startActivity(intent)
