@@ -16,10 +16,16 @@
         <item
             android:id="@+id/nav_filter_my_work_activity"
             android:title="filter_my_work" />
+        <item
+            android:id="@+id/nav_manager_add_arrangement"
+            android:title="nav_manager_add_arrangement"/>
     </group>
 
-    <item android:title="Nothing">
+    <item android:title="More">
+        android:id="@+id/nav_list_of_user"
+        android:title="list_of_users" />
         <menu>
+
             <item
                 android:id="@+id/nav_list_of_users"
                 android:title="list_of_users" />
