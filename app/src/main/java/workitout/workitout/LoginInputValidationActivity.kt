@@ -8,6 +8,11 @@ import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 
+/**
+ * This class is used in conjunction with LoginActivity to validate
+ * log-in details.
+ * @author Donna
+ */
 class LoginInputValidationActivity
 
 /**

@@ -7,7 +7,7 @@ import android.widget.ToggleButton
 
 /**
  * This class, connected with availability.xml, takes the values from the toggle buttons and adds
- * these to the database (to the corresponding user). 
+ * these to the database (to the corresponding user).
  * @author Danica
  */
 class AvailabilityActivity : AppCompatActivity() {

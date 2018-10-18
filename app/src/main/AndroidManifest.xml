@@ -24,10 +24,6 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AvailabilityActivity" />
         <activity android:name=".UsersListActivity" />
-        <activity
-            android:name=".CalendarActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DetailsActivity" />
         <activity android:name=".FilterMyWorkActivity" />
         <activity android:name=".FilterMondayActivity" />
         <activity android:name=".FilterTuesdayActivity" />

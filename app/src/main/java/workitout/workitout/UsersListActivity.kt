@@ -9,6 +9,15 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
 
+/**
+ * This class, connected to activity_users_list.xml, defines and displays
+ * the list of all users present in the databse. It works off of a RecyclerView
+ * format, and connects several of the important information-based classes together.
+ * This is a core aspect of the app, so this class is very important and has been treated
+ * as such.
+ * @author Donna
+ */
+
 class UsersListActivity : AppCompatActivity() {
 
     private val activity = this@UsersListActivity
