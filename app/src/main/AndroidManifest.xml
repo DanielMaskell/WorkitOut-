@@ -22,13 +22,8 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".MenuActivity" />
         <activity android:name=".AvailabilityActivity" />
         <activity android:name=".UsersListActivity" />
-        <activity
-            android:name=".CalendarActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DetailsActivity" />
         <activity android:name=".FilterMyWorkActivity" />
         <activity android:name=".FilterMondayActivity" />
         <activity android:name=".FilterTuesdayActivity" />
@@ -36,8 +31,6 @@
         <activity android:name=".FilterMyExtraWorkActivity" />
         <activity android:name=".FilterMyWednesdayActivity" />
         <activity android:name=".FilterMyThursdayActivity" />
-        <activity android:name=".Manager_add_arrangementActivity" />
-        <activity android:name=".DailyRosterActivity" />
         <activity android:name=".manager_add_arrangement"></activity>
     </application>
 

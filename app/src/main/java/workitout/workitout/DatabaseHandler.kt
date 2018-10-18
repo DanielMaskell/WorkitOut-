@@ -6,6 +6,14 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import java.util.*
 
+/**
+ * This class manages the Database aspects of the program. It has methods to add users,
+ * update user information, check for duplicate users, and to fetch the total list of
+ * users present in the database. This runs off of an extension to SQLiteOpenHelper to manage
+ * creation and version management.
+ * @author Donna
+ * @author Chris
+ */
 class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     companion object {
@@ -280,4 +288,5 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
         db.insert(TABLE_USER, null, values)
         db.close()
     }
+
 }

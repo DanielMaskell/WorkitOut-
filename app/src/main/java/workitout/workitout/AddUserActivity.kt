@@ -11,6 +11,14 @@ import android.support.v7.widget.AppCompatTextView
 import android.view.View
 import kotlinx.android.synthetic.main.activity_add_user.*
 
+/**
+    This class, connected with activity_add_user, first takes the username and password input
+    and checks the password against the database. When the button is clicked, it will check
+    the database for any duplicate entries. Additionally, it will ask for any missing
+    information i.e. if a first name has not been input. If there are no duplicates in the database,
+    all required information is present, and the password matches the database, the user will be added.
+    @author Donna
+ */
 
 class AddUserActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -22,7 +30,6 @@ class AddUserActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var textInputLayoutUserLName: TextInputLayout
     private lateinit var textInputLayoutPassword: TextInputLayout
     private lateinit var textInputLayoutConfirmPassword: TextInputLayout
-
 
     private lateinit var textInputEditTextUserFName: TextInputEditText
     private lateinit var textInputEditTextUserLName: TextInputEditText
