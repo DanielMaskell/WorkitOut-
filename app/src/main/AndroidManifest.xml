@@ -37,6 +37,7 @@
         <activity android:name=".FilterMyWednesdayActivity" />
         <activity android:name=".FilterMyThursdayActivity" />
         <activity android:name=".Manager_add_arrangementActivity" />
+        <activity android:name=".DailyRosterActivity" />
         <activity android:name=".manager_add_arrangement"></activity>
     </application>
 
