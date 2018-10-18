@@ -280,4 +280,5 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
         db.insert(TABLE_USER, null, values)
         db.close()
     }
+
 }
