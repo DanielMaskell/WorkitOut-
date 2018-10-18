@@ -11,6 +11,8 @@ import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.content_main.*
+
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -25,6 +27,42 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
+        }
+
+        //Change activity reference for these onClickListeners to the day activity. Has not been created yet.
+        monday.setOnClickListener { View ->
+            val intent = Intent( this, AvailabilityActivity::class.java)
+            startActivity(intent)
+        }
+
+        tuesday.setOnClickListener { View ->
+            val intent = Intent( this, FilterTuesdayActivity::class.java)
+            startActivity(intent)
+        }
+
+        wednesday.setOnClickListener { View ->
+            val intent = Intent( this, FilterTuesdayActivity::class.java)
+            startActivity(intent)
+        }
+
+        thursday.setOnClickListener { View ->
+            val intent = Intent( this, FilterTuesdayActivity::class.java)
+            startActivity(intent)
+        }
+
+        friday.setOnClickListener { View ->
+            val intent = Intent( this, FilterTuesdayActivity::class.java)
+            startActivity(intent)
+        }
+
+        saturday.setOnClickListener { View ->
+            val intent = Intent( this, FilterTuesdayActivity::class.java)
+            startActivity(intent)
+        }
+
+        sunday.setOnClickListener { View ->
+            val intent = Intent( this, FilterTuesdayActivity::class.java)
+            startActivity(intent)
         }
 
         val toggle = ActionBarDrawerToggle(
