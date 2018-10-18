@@ -14,7 +14,13 @@ import org.jetbrains.exposed.sql.Database
 import workitout.workitout.R.id.appCompatButtonLogin
 import kotlin.properties.Delegates
 
-
+/**
+ * This class, connected to activity_login.xml, runs the Log In screen that
+ * displays upon launch of the app (after the splash). It takes inputted usernames
+ * and passwords and checks them against the database. If a match is found for both,
+ * the program continues to the main activity.
+ * @author Donna
+ */
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     private val activity = this@LoginActivity

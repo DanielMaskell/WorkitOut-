@@ -5,6 +5,13 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
 
+/**
+ * This actiity, connected to activity_splash.xml, creates a simple
+ * login splash that displays when the app is initially launched. It
+ * defines a specific length of time for the splash to fade in, hold,
+ * and fade out.
+ * @author Donna
+ */
 class SplashActivity : AppCompatActivity() {
     private var delayHandler: Handler? = null
     private val SPLASH_DELAY: Long = 2000 //2 seconds
