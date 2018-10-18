@@ -36,39 +36,45 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     .setAction("Action", null).show()
         }
 
-        //Change activity reference for these onClickListeners to the day activity. Has not been created yet.
         monday.setOnClickListener { View ->
             val intent = Intent( this, DailyRosterActivity::class.java)
+            intent.putExtra("Monday", 1)
             startActivity(intent)
         }
 
         tuesday.setOnClickListener { View ->
             val intent = Intent( this, DailyRosterActivity::class.java)
+            intent.putExtra("Tuesday", 2)
             startActivity(intent)
         }
 
         wednesday.setOnClickListener { View ->
             val intent = Intent( this, DailyRosterActivity::class.java)
+            intent.putExtra("Wednesday", 3)
             startActivity(intent)
         }
 
         thursday.setOnClickListener { View ->
             val intent = Intent( this, DailyRosterActivity::class.java)
+            intent.putExtra("Thursday", 4)
             startActivity(intent)
         }
 
         friday.setOnClickListener { View ->
-            val intent = Intent( this, DailyRosterActivity::class.java)
+            val intent = Intent( this, FilterMyFridayActivity::class.java)
+            intent.putExtra("Friday", 5)
             startActivity(intent)
         }
 
         saturday.setOnClickListener { View ->
             val intent = Intent( this, DailyRosterActivity::class.java)
+            intent.putExtra("Saturday", 6)
             startActivity(intent)
         }
 
         sunday.setOnClickListener { View ->
             val intent = Intent( this, DailyRosterActivity::class.java)
+            intent.putExtra("Sunday", 7)
             startActivity(intent)
         }
 
