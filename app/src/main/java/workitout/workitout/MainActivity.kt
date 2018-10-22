@@ -11,17 +11,71 @@ import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
+
+/**
+ * This is the main page of the app. MainActivity handles the navigation between
+ * the home page and the pages corresponding to each day of the week. Additionally,
+ * this houses a navigation drawer for quick and easy navigation around different
+ * parts of the app.
+ * @author Full Team
+ */
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        getWindow().getDecorView().setBackgroundColor(getResources().getColor(android.R.color.background_light));
+
+
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
+        }
+
+        monday.setOnClickListener { View ->
+            val intent = Intent( this, DailyRosterActivity::class.java)
+            intent.putExtra("Monday", 1)
+            startActivity(intent)
+        }
+
+        tuesday.setOnClickListener { View ->
+            val intent = Intent( this, DailyRosterActivity::class.java)
+            intent.putExtra("Tuesday", 2)
+            startActivity(intent)
+        }
+
+        wednesday.setOnClickListener { View ->
+            val intent = Intent( this, DailyRosterActivity::class.java)
+            intent.putExtra("Wednesday", 3)
+            startActivity(intent)
+        }
+
+        thursday.setOnClickListener { View ->
+            val intent = Intent( this, DailyRosterActivity::class.java)
+            intent.putExtra("Thursday", 4)
+            startActivity(intent)
+        }
+
+        friday.setOnClickListener { View ->
+            val intent = Intent( this, FilterMyFridayActivity::class.java)
+            intent.putExtra("Friday", 5)
+            startActivity(intent)
+        }
+
+        saturday.setOnClickListener { View ->
+            val intent = Intent( this, DailyRosterActivity::class.java)
+            intent.putExtra("Saturday", 6)
+            startActivity(intent)
+        }
+
+        sunday.setOnClickListener { View ->
+            val intent = Intent( this, DailyRosterActivity::class.java)
+            intent.putExtra("Sunday", 7)
+            startActivity(intent)
         }
 
         val toggle = ActionBarDrawerToggle(
@@ -44,19 +98,19 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
         when (item.itemId) {
-            R.id.nav_detail_activity -> {
+            /*R.id.nav_detail_activity -> {
                 val intent = Intent(this, DetailsActivity::class.java)
                 startActivity(intent)
-            }
+            }*/
             R.id.nav_availability_activity -> {
                 val intent = Intent(this, AvailabilityActivity::class.java)
                 startActivity(intent)
 
             }
-            R.id.nav_calendar_activity -> {
+            /*R.id.nav_calendar_activity -> {
                 val intent = Intent(this, CalendarActivity::class.java)
                 startActivity(intent)
-            }
+            }*/
             R.id.nav_filter_my_work_activity -> {
                 val intent = Intent(this, FilterMyWorkActivity::class.java)
                 startActivity(intent)

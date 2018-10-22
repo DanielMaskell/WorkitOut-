@@ -39,6 +39,16 @@ class FilterMyWorkActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        btSunday_Work.setOnClickListener {
+            val intent = Intent(this, FilterSundayActivity::class.java)
+            startActivity(intent)
+        }
+
+        btSaturday_Work.setOnClickListener {
+            val intent = Intent(this, FilterSaturdayActivity::class.java)
+            startActivity(intent)
+        }
+
         btExtra_Work.setOnClickListener {
             val intent = Intent(this, FilterMyExtraWorkActivity::class.java)
             startActivity(intent)

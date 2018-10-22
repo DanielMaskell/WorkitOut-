@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/btExtra_Work"
+        android:id="@+id/btSaturday_Work"
         android:layout_width="160dp"
         android:layout_height="60dp"
         android:layout_marginBottom="8dp"
@@ -14,12 +14,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="#CAE1AF"
-        android:text="Extra_Work"
+        android:text="Saturday_Work"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.906" />
+        app:layout_constraintVertical_bias="0.914" />
 
     <LinearLayout
 
@@ -27,6 +27,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -54,7 +56,7 @@
             android:padding="8dp" />
 
         <EditText
-            android:id="@+id/btTursday_Work4"
+            android:id="@+id/btThursday_Work4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
@@ -93,6 +95,6 @@
             android:inputType="number"
             android:padding="8dp" />
 
-
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

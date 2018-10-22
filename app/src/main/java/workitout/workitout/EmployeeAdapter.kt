@@ -6,6 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
+/**
+ * This class is built around assisting the displaying of users. Its main
+ * purpose is to take User objects and translate the information to the
+ * required state to be displayed in the RecyclerView on UsersListActivity.
+ * @author Donna
+ * @author Chris
+ */
 class EmployeeAdapter(private val listUsers: List<User>) : RecyclerView.Adapter<EmployeeAdapter.UserViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {

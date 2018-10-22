@@ -12,6 +12,11 @@ import workitout.workitout.R.layout.availability
 import kotlin.properties.Delegates
 
 
+/**
+ * This class, connected with availability.xml, takes the values from the toggle buttons and adds
+ * these to the database (to the corresponding user).
+ * @author Danica
+ */
 class AvailabilityActivity : AppCompatActivity() {
 
     private lateinit var inputValidation: LoginInputValidationActivity

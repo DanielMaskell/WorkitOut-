@@ -8,7 +8,6 @@
     android:orientation="vertical"
     tools:context=".manager_add_arrangement">
 
-
     <LinearLayout
 
        android:layout_width = "match_parent"
@@ -16,26 +15,83 @@
        android:orientation="vertical">
 
         <EditText
-        android:id="@+id/etvName"
+        android:id="@+id/btemployee_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:padding="10dp"/>
+        android:layout_margin="8dp"
+        android:inputType="text"
+        android:padding="8dp"/>
 
         <EditText
-        android:id="@+id/etvAge"
+        android:id="@+id/btMonday_Work1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:inputType="number"
-        android:padding="10dp"/>
+        android:layout_margin="8dp"
+        android:inputType="text"
+        android:padding="8dp"/>
+
+        <EditText
+        android:id="@+id/btTuesday_Work2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:inputType="text"
+        android:padding="8dp"/>
+
+        <EditText
+        android:id="@+id/btWednesday_Work3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:inputType="text"
+        android:padding="8dp"/>
+
+        <EditText
+        android:id="@+id/btTursday_Work4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:inputType="text"
+        android:padding="8dp"/>
+
+        <EditText
+        android:id="@+id/btFriday_Work5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:inputType="text"
+        android:padding="8dp"/>
+
+        <EditText
+        android:id="@+id/btSaturday_Work6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:inputType="text"
+        android:padding="8dp"/>
+
+        <EditText
+        android:id="@+id/btSunday_Work7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:inputType="text"
+        android:padding="8dp"/>
+
+        <EditText
+        android:id="@+id/btExtra_Work8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:inputType="text"
+        android:padding="8dp"/>
 
         <Button
         android:id="@+id/btn_insert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:padding="10dp"
+        android:layout_margin="18dp"
+        android:padding="18dp"
         android:text="Insert" />
 
 
