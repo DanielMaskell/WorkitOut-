@@ -5,69 +5,92 @@
     android:id="@+id/relativeLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:addStatesFromChildren="false"
-    android:background="@drawable/img_lights">
+    android:addStatesFromChildren="false">
 
     <Button
         android:id="@+id/btMonday_work"
         android:layout_width="155dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="156dp"
+        android:layout_marginTop="52dp"
         android:background="#CAE1AF"
         android:clickable="true"
         android:onClick="onClick"
         android:text="Monday_Work"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btTuesday_Work"
         android:layout_width="155dp"
         android:layout_height="60dp"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="156dp"
+        android:layout_marginStart="212dp"
+        android:layout_marginTop="52dp"
+        android:background="#CAE1AF"
         android:clickable="true"
         android:text="Tuesday_Work"
-        android:background="#CAE1AF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btWednesday_Work"
         android:layout_width="155dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="292dp"
+        android:layout_marginTop="180dp"
+        android:background="#CAE1AF"
         android:clickable="true"
         android:text="Wednesday_Work"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="#CAE1AF"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btThursday_Work"
         android:layout_width="155dp"
         android:layout_height="60dp"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="292dp"
+        android:layout_marginStart="212dp"
+        android:layout_marginTop="180dp"
+        android:background="#CAE1AF"
         android:clickable="true"
         android:text="Thursday_Work"
-        android:background="#CAE1AF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btFriday_Work"
         android:layout_width="155dp"
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="440dp"
+        android:layout_marginTop="304dp"
+        android:background="#CAE1AF"
         android:clickable="true"
         android:text="Friday_Work"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btSaturday_Work"
+        android:layout_width="155dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="212dp"
+        android:layout_marginTop="304dp"
         android:background="#CAE1AF"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:clickable="true"
+        android:text="Saturday_Work"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btSunday_Work"
+        android:layout_width="155dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="440dp"
+        android:background="#CAE1AF"
+        android:clickable="true"
+        android:text="Sunday_Work"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btExtra_Work"
@@ -75,50 +98,11 @@
         android:layout_height="60dp"
         android:layout_marginStart="220dp"
         android:layout_marginTop="440dp"
+        android:background="#CAE1AF"
         android:clickable="true"
         android:text="Extra_Work"
-        android:background="#CAE1AF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="0dp"
-        android:layout_height="291dp"
-        android:layout_marginBottom="149dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
