@@ -31,11 +31,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         setSupportActionBar(toolbar)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
-
         monday.setOnClickListener { View ->
             val intent = Intent( this, DailyRosterActivity::class.java)
             intent.putExtra("Monday", 1)
