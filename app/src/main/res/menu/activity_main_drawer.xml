@@ -6,19 +6,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_detail_activity"
-            android:title="detail_activity" />
+            android:title="Details" />
         <item
             android:id="@+id/nav_availability_activity"
-            android:title="availability_activity" />
+            android:title="Availability" />
         <item
             android:id="@+id/nav_calendar_activity"
-            android:title="calendar_activity" />
+            android:title="Calendar" />
         <item
             android:id="@+id/nav_filter_my_work_activity"
-            android:title="filter_my_work" />
+            android:title="Filter My Work" />
         <item
             android:id="@+id/nav_manager_add_arrangement"
-            android:title="nav_manager_add_arrangement"/>
+            android:title="Add Details"/>
     </group>
 
     <item android:title="More">
@@ -28,10 +28,10 @@
 
             <item
                 android:id="@+id/nav_list_of_users"
-                android:title="list_of_users" />
+                android:title="List of Users" />
             <item
                 android:id="@+id/nav_add_users"
-                android:title="add_users" />
+                android:title="Add Users" />
         </menu>
     </item>
 
