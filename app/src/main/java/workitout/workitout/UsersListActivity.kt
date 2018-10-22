@@ -24,8 +24,8 @@ class UsersListActivity : AppCompatActivity() {
     private lateinit var textViewName: AppCompatTextView
     private lateinit var recyclerViewUsers: RecyclerView
     private lateinit var listUsers: MutableList<User>
-    private lateinit var employeeAdapter: EmployeeAdapter
-    private lateinit var databaseHandler: DatabaseHandler
+    private lateinit var usersRecyclerAdapter: UsersRecyclerAdapter
+    private lateinit var databaseHelper: DatabaseHandler
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +40,7 @@ class UsersListActivity : AppCompatActivity() {
      * This method is to initialize views
      */
     private fun initViews() {
-        textViewName = findViewById<View>(R.id.textViewName) as AppCompatTextView
+        textViewName = findViewById<View>(R.id.textViewFName) as AppCompatTextView
         recyclerViewUsers = findViewById<View>(R.id.recyclerViewUsers) as RecyclerView
     }
 
@@ -49,17 +49,14 @@ class UsersListActivity : AppCompatActivity() {
      */
     private fun initObjects() {
         listUsers = ArrayList()
-        employeeAdapter = EmployeeAdapter(listUsers)
+        usersRecyclerAdapter = UsersRecyclerAdapter(listUsers)
 
         val mLayoutManager = LinearLayoutManager(applicationContext)
         recyclerViewUsers.layoutManager = mLayoutManager
         recyclerViewUsers.itemAnimator = DefaultItemAnimator()
         recyclerViewUsers.setHasFixedSize(true)
-        recyclerViewUsers.adapter = employeeAdapter
-        databaseHandler = DatabaseHandler(activity)
-
-        val emailFromIntent = intent.getStringExtra("EMAIL")
-        textViewName.text = emailFromIntent
+        recyclerViewUsers.adapter = usersRecyclerAdapter
+        databaseHelper = DatabaseHandler(activity)
 
         var getDataFromSQLite = GetDataFromSQLite()
         getDataFromSQLite.execute()
@@ -71,7 +68,7 @@ class UsersListActivity : AppCompatActivity() {
     inner class GetDataFromSQLite : AsyncTask<Void, Void, List<User>>() {
 
         override fun doInBackground(vararg p0: Void?): List<User> {
-            return databaseHandler.getAllUser()
+            return databaseHelper.getAllUser()
         }
 
         override fun onPostExecute(result: List<User>?) {

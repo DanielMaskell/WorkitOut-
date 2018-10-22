@@ -13,7 +13,7 @@ import android.view.ViewGroup
  * @author Donna
  * @author Chris
  */
-class EmployeeAdapter(private val listUsers: List<User>) : RecyclerView.Adapter<EmployeeAdapter.UserViewHolder>() {
+class UsersRecyclerAdapter(private val listUsers: List<User>) : RecyclerView.Adapter<UsersRecyclerAdapter.UserViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
         // inflating recycler item view
@@ -24,7 +24,8 @@ class EmployeeAdapter(private val listUsers: List<User>) : RecyclerView.Adapter<
     }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
-        holder.textViewName.text = listUsers[position].userName
+        holder.textViewFName.text = listUsers[position].fName
+        holder.textViewLName.text = listUsers[position].lName
         holder.textViewPassword.text = listUsers[position].password
     }
 
@@ -38,11 +39,13 @@ class EmployeeAdapter(private val listUsers: List<User>) : RecyclerView.Adapter<
      */
     inner class UserViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        var textViewName: AppCompatTextView
+        var textViewFName: AppCompatTextView
+        var textViewLName: AppCompatTextView
         var textViewPassword: AppCompatTextView
 
         init {
-            textViewName = view.findViewById<View>(R.id.textViewName) as AppCompatTextView
+            textViewFName = view.findViewById<View>(R.id.textViewFName) as AppCompatTextView
+            textViewLName = view.findViewById<View>(R.id.textViewLName) as AppCompatTextView
             textViewPassword = view.findViewById<View>(R.id.textViewPassword) as AppCompatTextView
         }
     }

@@ -5,7 +5,6 @@
     android:layout_height="wrap_content"
     card_view:cardCornerRadius="4dp">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -24,11 +23,33 @@
                 android:text="@string/text_add_user_f_name"/>
 
             <android.support.v7.widget.AppCompatTextView
-                android:id="@+id/textViewName"
+                android:id="@+id/textViewFName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/text_add_user_l_name"/>
+                android:text="@string/text_add_user_f_name"
+                android:textColor="@android:color/darker_gray"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/text_add_user_l_name" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/textViewLName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/text_add_user_l_name"
+                android:textColor="@android:color/darker_gray" />
         </LinearLayout>
 
         <LinearLayout
