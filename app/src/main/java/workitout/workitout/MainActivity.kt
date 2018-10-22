@@ -124,8 +124,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 startActivity(intent)
             }
             R.id.nav_add_users-> {
-//                var intent= Intent(this,AddUserActivity::class.java)
-//                startActivity(intent)
+                var intent= Intent(this,AddUserActivity::class.java)
+                startActivity(intent)
             }
         }
 

@@ -34,6 +34,8 @@
     //Strings for add user activity//
     <string name="hint_confirm_password">Confirm Password</string>
     <string name="text_add_user">Add User</string>
+    <string name="text_add_user_f_name">User First Name</string>
+    <string name="text_add_user_l_name">User Last Name</string>
     <string name="error_password_match">Password Does Not Matches</string>
     <string name="success_message">Add User Successful</string>
 
