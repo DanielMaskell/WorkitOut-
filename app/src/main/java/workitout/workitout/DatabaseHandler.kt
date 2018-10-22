@@ -44,6 +44,25 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
         private val COLUMN_FRIDAY_AVAIL = "friday_avail"
         private val COLUMN_SATURDAY_AVAIL = "saturday_avail"
         private val COLUMN_SUNDAY_AVAIL = "sunday_avail"
+
+        private val TABLE_WORKINFO = "workInfo"
+
+        private val WORKINFO_ID = "workinfo_id" //primary key
+        private val WORKINFO_USER_ID = "workinfo_user_id" //foreign key
+        private val WORKINFO_EMPLOYEE_NAME = "employeename"
+        private val WORKINFO_COLUMN_MON = "monday"
+        private val WORKINFO_COLUMN_TUE = "tuesday"
+        private val WORKINFO_COLUMN_WED = "wednesday"
+        private val WORKINFO_COLUMN_THU = "thurday"
+        private val WORKINFO_COLUMN_FRI = "friday"
+        private val WORKINFO_COLUMN_SAT = "saturday"
+        private val WORKINFO_COLUMN_SUN = "sunday"
+        private val WORKINFO_COLUMN_EXTRA = "extra"
+
+        private val WORKINFO_COLUMN_START_TIME = "starttime"
+        private val WORKINFO_COLUMN_END_TIME = "endtime"
+
+        private val WORKINFO_COLUMN_WORKINFORMATION = "workinformation"
     }
 
     private val CREATE_USER_TABLE = ("CREATE TABLE " + TABLE_USER + "("
@@ -53,6 +72,18 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
             + COLUMN_USER_EMAIL_Address + " TEXT," + COLUMN_USER_HOME_Address + " TEXT," + COLUMN_CONTRACT_TYPE + " TEXT,"
             + COLUMN_LOGGED_IN + " INTEGER," + COLUMN_MONDAY_AVAIL + " INTEGER," + COLUMN_TUESDAY_AVAIL + " INTEGER," + COLUMN_WEDNESDAY_AVAIL + " INTEGER,"
             + COLUMN_THURSDAY_AVAIL + " INTEGER," + COLUMN_FRIDAY_AVAIL + " INTEGER," + COLUMN_SATURDAY_AVAIL + " INTEGER," + COLUMN_SUNDAY_AVAIL + " INTEGER" + ");")
+
+    private val CREATE_USER_TABLE2 = ("CREATE TABLE" + TABLE_WORKINFO +" ("+ WORKINFO_ID + "INTEGER PRIMARY KEY AUTOINCREMENT, " + WORKINFO_EMPLOYEE_NAME + " VARCHAR(256)"
+            + WORKINFO_COLUMN_MON + " VARCHAR(256)"  + WORKINFO_COLUMN_START_TIME + " VARCHAR(256)" + WORKINFO_COLUMN_END_TIME + " VARCHAR(256)" + WORKINFO_COLUMN_WORKINFORMATION + "TEXT"
+            + WORKINFO_COLUMN_TUE + " VARCHAR(256)"  + WORKINFO_COLUMN_START_TIME + " VARCHAR(256)" + WORKINFO_COLUMN_END_TIME + " VARCHAR(256)" + WORKINFO_COLUMN_WORKINFORMATION + "TEXT"
+            + WORKINFO_COLUMN_WED + " VARCHAR(256)"  + WORKINFO_COLUMN_START_TIME + " VARCHAR(256)" + WORKINFO_COLUMN_END_TIME + " VARCHAR(256)" + WORKINFO_COLUMN_WORKINFORMATION + "TEXT"
+            + WORKINFO_COLUMN_THU + " VARCHAR(256)"  + WORKINFO_COLUMN_START_TIME + " VARCHAR(256)" + WORKINFO_COLUMN_END_TIME + " VARCHAR(256)" + WORKINFO_COLUMN_WORKINFORMATION + "TEXT"
+            + WORKINFO_COLUMN_FRI + " VARCHAR(256)"  + WORKINFO_COLUMN_START_TIME + " VARCHAR(256)" + WORKINFO_COLUMN_END_TIME + " VARCHAR(256)" + WORKINFO_COLUMN_WORKINFORMATION + "TEXT"
+            + WORKINFO_COLUMN_SAT + " VARCHAR(256)"  + WORKINFO_COLUMN_START_TIME + " VARCHAR(256)" + WORKINFO_COLUMN_END_TIME + " VARCHAR(256)" + WORKINFO_COLUMN_WORKINFORMATION + "TEXT"
+            + WORKINFO_COLUMN_SUN + " VARCHAR(256)"  + WORKINFO_COLUMN_START_TIME + " VARCHAR(256)" + WORKINFO_COLUMN_END_TIME + " VARCHAR(256)" + WORKINFO_COLUMN_WORKINFORMATION + "TEXT"
+            + WORKINFO_COLUMN_EXTRA + " VARCHAR(256)"  + WORKINFO_COLUMN_START_TIME + " VARCHAR(256)" + WORKINFO_COLUMN_END_TIME + " VARCHAR(256)" + WORKINFO_COLUMN_WORKINFORMATION + "TEXT"
+            + ");")
+
 
     private val DROP_USER_TABLE = "DROP TABLE IF EXISTS $TABLE_USER"
 
@@ -286,6 +317,32 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
         values.put(DatabaseHandler.COLUMN_SUNDAY_AVAIL, true)
 
         db.insert(TABLE_USER, null, values)
+        db.close()
+    }
+
+    fun insertWeekdayWork(user: User){
+
+        val db = this.writableDatabase
+        val cv = ContentValues()
+        cv.put(DatabaseHandler.WORKINFO_EMPLOYEE_NAME, "employee_name")
+        cv.put(DatabaseHandler.WORKINFO_COLUMN_MON, "monday")
+        cv.put(DatabaseHandler.WORKINFO_COLUMN_WED, "tuesday")
+        cv.put(DatabaseHandler.WORKINFO_COLUMN_WED, "wednesday")
+        cv.put(DatabaseHandler.WORKINFO_COLUMN_THU, "thursday")
+        cv.put(DatabaseHandler.WORKINFO_COLUMN_FRI, "friday")
+        cv.put(DatabaseHandler.WORKINFO_COLUMN_SAT, "saturday")
+        cv.put(DatabaseHandler.WORKINFO_COLUMN_SUN, "sunday")
+        cv.put(DatabaseHandler.WORKINFO_COLUMN_EXTRA, "extra")
+        cv.put(DatabaseHandler.WORKINFO_COLUMN_START_TIME, "starttime")
+        cv.put(DatabaseHandler.WORKINFO_COLUMN_END_TIME, "endtime")
+        cv.put(DatabaseHandler.WORKINFO_COLUMN_WORKINFORMATION, "workinformation")
+        db.insert(TABLE_WORKINFO, null, cv)
+
+        //val result = db.insert(TABLE_WORKINFO, nullColumnHack: null, cv)
+        //if(result = -1.toLong())
+            //Toast.makeText(context, text:"Failed", Toast.LENGTH_SHORT).show()
+        //else
+            //Toast.makeText(context, text:"Success", Toast.LENGTH_SHORT).show()
         db.close()
     }
 

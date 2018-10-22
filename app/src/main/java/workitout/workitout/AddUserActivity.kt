@@ -1,15 +1,22 @@
 package workitout.workitout
 
+import android.content.Intent
 import android.os.Bundle
+import android.support.design.widget.NavigationView
 import android.support.design.widget.Snackbar
 import android.support.design.widget.TextInputEditText
 import android.support.design.widget.TextInputLayout
+import android.support.v4.view.GravityCompat
 import android.support.v4.widget.NestedScrollView
+import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.AppCompatButton
 import android.support.v7.widget.AppCompatTextView
+import android.view.MenuItem
 import android.view.View
 import kotlinx.android.synthetic.main.activity_add_user.*
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.app_bar_main.*
 
 /**
     This class, connected with activity_add_user, first takes the username and password input
@@ -20,7 +27,7 @@ import kotlinx.android.synthetic.main.activity_add_user.*
     @author Donna
  */
 
-class AddUserActivity : AppCompatActivity(), View.OnClickListener {
+class AddUserActivity : AppCompatActivity(), View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
 
     private val activity = this@AddUserActivity
 
@@ -53,6 +60,16 @@ class AddUserActivity : AppCompatActivity(), View.OnClickListener {
         initListeners()
 
         initObjects()
+
+        setSupportActionBar(toolbar)
+//        this.supportActionBar!!.title = "Add User"
+
+//        val toggle = ActionBarDrawerToggle(
+//                this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+//        drawer_layout.addDrawerListener(toggle)
+//        toggle.syncState()
+//
+//        nav_view.setNavigationItemSelectedListener(this)
     }
 
     /**
@@ -154,5 +171,46 @@ class AddUserActivity : AppCompatActivity(), View.OnClickListener {
         textInputEditTextUserLName!!.text = null
         textInputEditTextPassword!!.text = null
         textInputEditTextConfirmPassword!!.text = null
+    }
+
+    /**
+     * Navigation menu
+     */
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        // Handle navigation view item clicks here.
+        when (item.itemId) {
+            /*R.id.nav_detail_activity -> {
+                val intent = Intent(this, DetailsActivity::class.java)
+                startActivity(intent)
+            }*/
+            R.id.nav_availability_activity -> {
+                val intent = Intent(this, AvailabilityActivity::class.java)
+                startActivity(intent)
+
+            }
+            /*R.id.nav_calendar_activity -> {
+                val intent = Intent(this, CalendarActivity::class.java)
+                startActivity(intent)
+            }*/
+            R.id.nav_filter_my_work_activity -> {
+                val intent = Intent(this, FilterMyWorkActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.nav_manager_add_arrangement -> {
+                val intent = Intent(this, manager_add_arrangement::class.java)
+                startActivity(intent)
+            }
+            R.id.nav_list_of_users -> {
+                val intent = Intent(this, UsersListActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.nav_add_users-> {
+                var intent= Intent(this,AddUserActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
+        drawer_layout.closeDrawer(GravityCompat.START)
+        return true
     }
 }

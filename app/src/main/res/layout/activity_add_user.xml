@@ -25,7 +25,7 @@
                 android:id="@+id/textInputEditTextUserFName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_user_name"
+                android:hint="@string/text_add_user_f_name"
                 android:inputType="text"
                 android:maxLines="1" />
         </android.support.design.widget.TextInputLayout>
@@ -34,13 +34,13 @@
             android:id="@+id/textInputLayoutUserLName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp">
+            android:layout_marginTop="20dp">
 
             <android.support.design.widget.TextInputEditText
                 android:id="@+id/textInputEditTextUserLName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_user_name"
+                android:hint="@string/text_add_user_l_name"
                 android:inputType="text"
                 android:maxLines="1" />
         </android.support.design.widget.TextInputLayout>
@@ -73,19 +73,6 @@
                 android:hint="@string/hint_confirm_password"
                 android:inputType="textPassword"
                 android:maxLines="1"/>
-        </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/textInputLayoutUserType"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp">
-
-            <Spinner
-                android:id="@+id/spinnerUserType"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
         </android.support.design.widget.TextInputLayout>
 
         <android.support.v7.widget.AppCompatButton

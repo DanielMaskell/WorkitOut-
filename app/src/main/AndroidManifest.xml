@@ -20,8 +20,7 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity
-            android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name=".MainActivity" />
         <activity android:name=".AvailabilityActivity" />
         <activity android:name=".UsersListActivity" />
         <activity android:name=".FilterMyWorkActivity" />
@@ -32,7 +31,9 @@
         <activity android:name=".FilterMyWednesdayActivity" />
         <activity android:name=".FilterMyThursdayActivity" />
         <activity android:name=".DailyRosterActivity" />
-        <activity android:name=".manager_add_arrangement"></activity>
+        <activity android:name=".manager_add_arrangement" />
+        <activity android:name=".AddUserActivity" />
+        <activity android:name=".mysundaoywork"></activity>
     </application>
 
 </manifest>

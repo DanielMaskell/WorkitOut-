@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/img_lights">
+    android:layout_height="match_parent">
 
     <Button
         android:id="@+id/btTuesday_Work"
@@ -14,26 +13,88 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:background="#CAE1AF"
         android:text="Thursday_Work"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091" />
+        app:layout_constraintVertical_bias="0.877" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="344dp"
-        android:layout_height="455dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="136dp"
-        android:text="My Thursday Work"
-        android:textColor="#2196F3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.785" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/btMonday_Work1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:padding="8dp" />
+
+        <EditText
+            android:id="@+id/btTuesday_Work2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:inputType="number"
+            android:padding="8dp" />
+
+        <EditText
+            android:id="@+id/btWednesday_Work3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:inputType="number"
+            android:padding="8dp" />
+
+        <EditText
+            android:id="@+id/btTursday_Work4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:inputType="number"
+            android:padding="8dp" />
+
+        <EditText
+            android:id="@+id/btFriday_Work5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:inputType="number"
+            android:padding="8dp" />
+
+        <EditText
+            android:id="@+id/btSaturday_Work6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:inputType="number"
+            android:padding="8dp" />
+
+        <EditText
+            android:id="@+id/btSunday_Work7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:inputType="number"
+            android:padding="8dp" />
+
+        <EditText
+            android:id="@+id/btExtra_Work8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:inputType="number"
+            android:padding="8dp" />
+
+
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

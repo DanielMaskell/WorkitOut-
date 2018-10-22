@@ -21,14 +21,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="@string/hint_user_name"/>
+                android:text="@string/text_add_user_f_name"/>
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/textViewName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/hint_user_name"/>
+                android:text="@string/text_add_user_l_name"/>
         </LinearLayout>
 
         <LinearLayout
