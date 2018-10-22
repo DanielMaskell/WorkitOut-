@@ -33,43 +33,43 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         monday.setOnClickListener { View ->
             val intent = Intent( this, DailyRosterActivity::class.java)
-            intent.putExtra("Monday", 1)
+            intent.putExtra("Day", "Monday")
             startActivity(intent)
         }
 
         tuesday.setOnClickListener { View ->
             val intent = Intent( this, DailyRosterActivity::class.java)
-            intent.putExtra("Tuesday", 2)
+            intent.putExtra("Day", "Tuesday")
             startActivity(intent)
         }
 
         wednesday.setOnClickListener { View ->
             val intent = Intent( this, DailyRosterActivity::class.java)
-            intent.putExtra("Wednesday", 3)
+            intent.putExtra("Day", "Wednesday")
             startActivity(intent)
         }
 
         thursday.setOnClickListener { View ->
             val intent = Intent( this, DailyRosterActivity::class.java)
-            intent.putExtra("Thursday", 4)
+            intent.putExtra("Day", "Thursday")
             startActivity(intent)
         }
 
         friday.setOnClickListener { View ->
-            val intent = Intent( this, FilterMyFridayActivity::class.java)
-            intent.putExtra("Friday", 5)
+            val intent = Intent( this, DailyRosterActivity::class.java)
+            intent.putExtra("Day", "Friday")
             startActivity(intent)
         }
 
         saturday.setOnClickListener { View ->
             val intent = Intent( this, DailyRosterActivity::class.java)
-            intent.putExtra("Saturday", 6)
+            intent.putExtra("Day", "Saturday")
             startActivity(intent)
         }
 
         sunday.setOnClickListener { View ->
             val intent = Intent( this, DailyRosterActivity::class.java)
-            intent.putExtra("Sunday", 7)
+            intent.putExtra("Day", "Sunday")
             startActivity(intent)
         }
 
