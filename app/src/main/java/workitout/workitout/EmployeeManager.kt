@@ -118,34 +118,34 @@ class EmployeeManager : AppCompatActivity() {
                     val databaseHandler = DatabaseHandler(this)
 
                     val response = databaseHandler.addUser(values)
-                    if (response == "ok") {
-
-                        Toast.makeText(this, "Employee Added",
-                                Toast.LENGTH_SHORT).show()
-
-                        val intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)
-                        finish()
-
-                    } else {
-                        Toast.makeText(this, "Not Added... Try again",
-                                Toast.LENGTH_SHORT).show()
-                    }
+//                    if (response == "ok") {
+//
+//                        Toast.makeText(this, "Employee Added",
+//                                Toast.LENGTH_SHORT).show()
+//
+//                        val intent = Intent(this, MainActivity::class.java)
+//                        startActivity(intent)
+//                        finish()
+//
+//                    } else {
+//                        Toast.makeText(this, "Not Added... Try again",
+//                                Toast.LENGTH_SHORT).show()
+//                    }
                 } else {
 
                     val databaseHandler = DatabaseHandler(this)
-                    val res: String = databaseHandler.updateUser(values, recordID)
+//                    val res: String = databaseHandler.updateUser(values, recordID)
 
-                    if (res == "ok") {
-                        Toast.makeText(this, "Employee Updated",
-                                Toast.LENGTH_SHORT).show()
-                        val intent = Intent(this, MainActivity::class.java)
-                        startActivity(intent)
-                        finish()
-                    } else {
-                        Toast.makeText(this, "Error... Try Again",
-                                Toast.LENGTH_SHORT).show()
-                    }
+//                    if (res == "ok") {
+//                        Toast.makeText(this, "Employee Updated",
+//                                Toast.LENGTH_SHORT).show()
+//                        val intent = Intent(this, MainActivity::class.java)
+//                        startActivity(intent)
+//                        finish()
+//                    } else {
+//                        Toast.makeText(this, "Error... Try Again",
+//                                Toast.LENGTH_SHORT).show()
+//                    }
                 }
             }
         }
@@ -155,17 +155,17 @@ class EmployeeManager : AppCompatActivity() {
             val recordID = intent.getIntExtra("id", 0)
 
             val DB = DatabaseHandler(this)
-            val res: String = DB.deleteUser(recordID)
+//            val res: String = DB.deleteUser(recordID)
 
-            if (res == "ok") {
-
-                Toast.makeText(this, "Employee Deleted",
-                        Toast.LENGTH_SHORT).show()
-            } else {
-
-                Toast.makeText(this, "Error... Try Again",
-                        Toast.LENGTH_SHORT).show()
-            }
+//            if (res == "ok") {
+//
+//                Toast.makeText(this, "Employee Deleted",
+//                        Toast.LENGTH_SHORT).show()
+//            } else {
+//
+//                Toast.makeText(this, "Error... Try Again",
+//                        Toast.LENGTH_SHORT).show()
+//            }
 
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
