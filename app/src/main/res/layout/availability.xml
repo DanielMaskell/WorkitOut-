@@ -5,20 +5,39 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp">
 
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayoutUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/EnterUsername"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_user_name"
+            android:inputType="text"
+            android:maxLines="1"/>
+    </android.support.design.widget.TextInputLayout>
+
 
     <TextView
         android:id="@+id/monday"
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_alignParentLeft="true"
+        android:layout_below="@id/textInputLayoutUserName"
+        android:layout_marginTop="40dp"
         android:text="@string/monday"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
     <ToggleButton
         android:id="@+id/toggleButton1"
         android:layout_width="wrap_content"
+        android:layout_below="@id/textInputLayoutUserName"
         android:layout_height="50dp"
         android:layout_toRightOf="@id/monday"
+        android:layout_marginTop="40dp"
         android:text="@string/togglebutton1" />
 
     <TextView
@@ -116,5 +135,13 @@
         android:layout_below="@id/toggleButton6"
         android:layout_toRightOf="@id/sunday"
         android:text="@string/togglebutton7" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/appCompatUpdateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_below="@id/toggleButton6"
+        android:text="@string/text_login" />
 
 </RelativeLayout>
