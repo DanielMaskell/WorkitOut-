@@ -227,6 +227,14 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
     /**
      * This method to update user availability
      *by taking in username and toggle buttons state
+     *  @param username
+     *   @param monday
+     *   @param tuesday
+     *   @param wednesday
+     *   @param thursday
+     *   @param friday
+     *   @param saturday
+     *   @param sunday
      */
     fun updateAvailability(username: String, monday: Int, tuesday: Int, wednesday: Int, thursday: Int, friday: Int, saturday: Int, sunday: Int) {
         val db = this.writableDatabase
