@@ -40,7 +40,7 @@ class UsersListActivity : AppCompatActivity() {
      * This method is to initialize views
      */
     private fun initViews() {
-        textViewName = findViewById<View>(R.id.textViewName) as AppCompatTextView
+        textViewName = findViewById<View>(R.id.textViewFName) as AppCompatTextView
         recyclerViewUsers = findViewById<View>(R.id.recyclerViewUsers) as RecyclerView
     }
 
@@ -49,7 +49,7 @@ class UsersListActivity : AppCompatActivity() {
      */
     private fun initObjects() {
         listUsers = ArrayList()
-        employeeAdapter = UsersRecyclerAdapter(listUsers)
+        employeeAdapter = UsersRecyclerAdapter(listUsers, this)
 
         val mLayoutManager = LinearLayoutManager(applicationContext)
         recyclerViewUsers.layoutManager = mLayoutManager
@@ -58,8 +58,8 @@ class UsersListActivity : AppCompatActivity() {
         recyclerViewUsers.adapter = employeeAdapter
         databaseHandler = DatabaseHandler(activity)
 
-        val emailFromIntent = intent.getStringExtra("EMAIL")
-        textViewName.text = emailFromIntent
+        val nameFromIntent = intent.getStringExtra("User Name")
+        textViewName.text = nameFromIntent
 
         var getDataFromSQLite = GetDataFromSQLite()
         getDataFromSQLite.execute()
