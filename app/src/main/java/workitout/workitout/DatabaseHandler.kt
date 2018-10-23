@@ -180,6 +180,16 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
     }
 
     /**
+     * Add user with using value
+     * @param value
+     */
+    fun addUser(v : ContentValues){
+        val db = this.writableDatabase
+        db.insert(TABLE_USER, null, v)
+        db.close()
+    }
+
+    /**
      * This method to update user record
      *
      * @param user
