@@ -43,4 +43,28 @@
     <string name="error_password_match">Password Does Not Matches</string>
     <string name="success_message">Add User Successful</string>
 
+    //Strings for database
+    <string name="database_name">WorkItOut.db</string>
+    <string name="table_user">user</string>
+    <string name="column_user_id">user_id</string>
+    <string name="column_user_f_name">user_f_name</string>
+    <string name="column_user_l_name">user_l_name</string>
+    <string name="column_user_name">column_user_name</string>
+    <string name="column_user_password">user_password</string>
+    <string name="column_user_email_address">user_email_address</string>
+    <string name="column_user_home_address">user_home_address</string>
+    <string name="column_user_home_phone">user_home_phone</string>
+    <string name="column_user_mobile_phone">user_mobile_phone</string>
+    <string name="column_user_type">user_type</string>
+    <string name="column_employee_number">employee_number</string>
+    <string name="column_contract_type">contract_type</string>
+    <string name="column_logged_in">logged_in</string>
+    <string name="column_monday_avail">monday_avail</string>
+    <string name="column_tuesday_avail">tuesday_avail</string>
+    <string name="column_wednesday_avail">wednesday_avail</string>
+    <string name="column_thursday_avail">thursday_avail</string>
+    <string name="column_friday_avail">friday_avail</string>
+    <string name="column_saturday_avail">saturday_avail</string>
+    <string name="column_sunday_avail">sunday_avail</string>
+
 </resources>

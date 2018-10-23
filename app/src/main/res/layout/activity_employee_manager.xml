@@ -18,7 +18,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/fnametxt"
+        android:id="@+id/fNameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="First Name"
@@ -26,43 +26,67 @@
         android:text="" />
 
     <EditText
-        android:id="@+id/lnametxt"
+        android:id="@+id/lNameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Last Name"
         android:inputType="textPersonName"
         android:text="" />
 
-    <!--<EditText-->
-        <!--android:id="@+id/home_phone"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:hint="Home Phone"-->
-        <!--android:inputType="phone"-->
-        <!--android:text="" />-->
-
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/passwordEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
         android:inputType="textPassword"
         android:text="" />
 
-    <!--<EditText-->
-        <!--android:id="@+id/home_address"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:hint="Home Address"-->
-        <!--android:inputType="textPostalAddress"-->
-        <!--android:text="" />-->
-
     <EditText
-        android:id="@+id/emailtxt"
+        android:id="@+id/emailEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
         android:inputType="textEmailAddress"
+        android:text="" />
+
+    <EditText
+        android:id="@+id/homeAddressEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Home Address"
+        android:inputType="textPostalAddress"
+        android:text="" />
+
+    <EditText
+        android:id="@+id/homePhoneEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Home Phone"
+        android:inputType="phone"
+        android:text="" />
+
+    <EditText
+        android:id="@+id/mobilePhoneEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mobile Phone"
+        android:inputType="phone"
+        android:text="" />
+
+    <EditText
+        android:id="@+id/userTypeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="User Type"
+        android:inputType="text"
+        android:text="" />
+
+    <EditText
+        android:id="@+id/employeeNumberEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Employee Number"
+        android:inputType="text"
         android:text="" />
 
     <LinearLayout
@@ -79,12 +103,12 @@
             android:text="Add Employee"
             android:textSize="16sp" />
 
-        <!--<Button-->
-            <!--android:id="@+id/delete_btn"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="Delete Employee"-->
-            <!--android:textSize="16sp" />-->
+        <Button
+            android:id="@+id/delete_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete Employee"
+            android:textSize="16sp" />
 
     </LinearLayout>
 </LinearLayout>

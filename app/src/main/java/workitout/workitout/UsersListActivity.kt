@@ -11,7 +11,7 @@ import android.view.View
 
 /**
  * This class, connected to activity_users_list.xml, defines and displays
- * the list of all users present in the databse. It works off of a RecyclerView
+ * the list of all users present in the database. It works off of a RecyclerView
  * format, and connects several of the important information-based classes together.
  * This is a core aspect of the app, so this class is very important and has been treated
  * as such.
@@ -24,7 +24,7 @@ class UsersListActivity : AppCompatActivity() {
     private lateinit var textViewName: AppCompatTextView
     private lateinit var recyclerViewUsers: RecyclerView
     private lateinit var listUsers: MutableList<User>
-    private lateinit var employeeAdapter: EmployeeAdapter
+    private lateinit var employeeAdapter: UsersRecyclerAdapter
     private lateinit var databaseHandler: DatabaseHandler
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,7 +49,7 @@ class UsersListActivity : AppCompatActivity() {
      */
     private fun initObjects() {
         listUsers = ArrayList()
-        employeeAdapter = EmployeeAdapter(listUsers)
+        employeeAdapter = UsersRecyclerAdapter(listUsers)
 
         val mLayoutManager = LinearLayoutManager(applicationContext)
         recyclerViewUsers.layoutManager = mLayoutManager

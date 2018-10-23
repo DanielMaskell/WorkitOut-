@@ -13,6 +13,7 @@ import java.util.*
  * creation and version management.
  * @author Donna
  * @author Chris
+ * @author Danica
  */
 class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
@@ -180,6 +181,16 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
     }
 
     /**
+     * Add user with using value
+     * @param value
+     */
+    fun addUser(v : ContentValues){
+        val db = this.writableDatabase
+        db.insert(TABLE_USER, null, v)
+        db.close()
+    }
+
+    /**
      * This method to update user record
      *
      * @param user
@@ -249,6 +260,13 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
                 arrayOf(user.id.toString()))
         db.close()
     }
+
+    fun deleteUser(userID : Int){
+        val db = this.writableDatabase
+        db.delete(TABLE_USER, "$COLUMN_USER_ID = ?", arrayOf(userID.toString()))
+        db.close()
+    }
+
 
     /**
      * This method to check user exist or not
