@@ -230,6 +230,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
         values.put(COLUMN_SATURDAY_AVAIL, saturday)
         values.put(COLUMN_SUNDAY_AVAIL, sunday)
 
+
         db.update(TABLE_USER, values, "$COLUMN_USER_ID = ?",
                 arrayOf(username.toString()))
         db.close()
@@ -337,6 +338,8 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
         values.put(DatabaseHandler.COLUMN_FRIDAY_AVAIL, true)
         values.put(DatabaseHandler.COLUMN_SATURDAY_AVAIL, true)
         values.put(DatabaseHandler.COLUMN_SUNDAY_AVAIL, true)
+
+        println("Database add user test")
 
         db.insert(TABLE_USER, null, values)
         db.close()
