@@ -49,7 +49,7 @@ class UsersListActivity : AppCompatActivity() {
      */
     private fun initObjects() {
         listUsers = ArrayList()
-        usersRecyclerAdapter = UsersRecyclerAdapter(listUsers)
+        usersRecyclerAdapter = UsersRecyclerAdapter(listUsers, this)
 
         val mLayoutManager = LinearLayoutManager(applicationContext)
         recyclerViewUsers.layoutManager = mLayoutManager
@@ -57,6 +57,9 @@ class UsersListActivity : AppCompatActivity() {
         recyclerViewUsers.setHasFixedSize(true)
         recyclerViewUsers.adapter = usersRecyclerAdapter
         databaseHelper = DatabaseHandler(activity)
+
+        val userNameFromIntent = intent.getStringExtra("USERNAME")
+        textViewName.text = userNameFromIntent
 
         var getDataFromSQLite = GetDataFromSQLite()
         getDataFromSQLite.execute()
