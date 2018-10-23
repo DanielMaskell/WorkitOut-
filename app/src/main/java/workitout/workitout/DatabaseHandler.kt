@@ -13,6 +13,7 @@ import java.util.*
  * creation and version management.
  * @author Donna
  * @author Chris
+ * @author Danica
  */
 class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
