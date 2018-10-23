@@ -214,6 +214,28 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
     }
 
     /**
+     * This method to update user availability
+     *by taking in username and toggle buttons state
+     */
+    fun updateAvailability(username: String, monday: Int, tuesday: Int, wednesday: Int, thursday: Int, friday: Int, saturday: Int, sunday: Int) {
+        val db = this.writableDatabase
+
+        val values = ContentValues()
+        values.put(COLUMN_USER_NAME, username)
+        values.put(COLUMN_MONDAY_AVAIL, monday)
+        values.put(COLUMN_TUESDAY_AVAIL, tuesday)
+        values.put(COLUMN_WEDNESDAY_AVAIL, wednesday)
+        values.put(COLUMN_THURSDAY_AVAIL, thursday)
+        values.put(COLUMN_FRIDAY_AVAIL, friday)
+        values.put(COLUMN_SATURDAY_AVAIL, saturday)
+        values.put(COLUMN_SUNDAY_AVAIL, sunday)
+
+        db.update(TABLE_USER, values, "$COLUMN_USER_ID = ?",
+                arrayOf(username.toString()))
+        db.close()
+    }
+
+    /**
      * This method is to delete user record
      *
      * @param user
