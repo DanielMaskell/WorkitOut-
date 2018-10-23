@@ -259,6 +259,13 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context, DATABASE_NAM
         db.close()
     }
 
+    fun deleteUser(userID : Int){
+        val db = this.writableDatabase
+        db.delete(TABLE_USER, "$COLUMN_USER_ID = ?", arrayOf(userID.toString()))
+        db.close()
+    }
+
+
     /**
      * This method to check user exist or not
      *
